@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/local', { 
+mongoose.connect('mongodb+srv://Omri5790:omri5790801@cluster1.jqcztgu.mongodb.net/', { 
     useNewUrlParser: true, useUnifiedTopology: true,
 });
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin View</title>
+  <!-- Your CSS and other head content -->
+
+</head>
+<body>
+  <!-- Your HTML content for the admin view -->
+  <h1>Welcome to Admin View</h1>
+  <!-- ... Other content specific to the admin view -->
+
+  <!-- Include the Socket.io library -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- Your client-side script specific to the admin view -->
+  <script>
+    const socket = io(); // Connect to the websocket server for admin view
+
+    // Handle incoming events from the server for admin view
+    socket.on('adminEvent', (data) => {
+      // Do something with the data received from the server for admin view
+    });
+
+    // Send data to the server for admin view
+    socket.emit('adminEvent', dataToSend);
+  </script>
+</body>
+</html>
