@@ -1,0 +1,30 @@
+<!-- views/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ... Your head content -->
+</head>
+<body>
+  <header></header>
+
+  <section class="success">
+    <h1>Order Successful</h1>
+    <p id="successMessage">Your order has been received. Thank you!</p>
+  </section>
+
+  <footer></footer>
+
+  <script src="/public/common.js"></script>
+  <script>
+    const successMessage = document.getElementById('successMessage');
+    const urlParams = new URLSearchParams(window.location.search);
+    const actionType = urlParams.get('action');
+
+    if (actionType === 'delivery') {
+      successMessage.textContent = 'Your delivery order has been received. Thank you!';
+    } else if (actionType === 'reservation') {
+      successMessage.textContent = 'Your reservation has been booked. Thank you!';
+    }
+  </script>
+</body>
+</html>
