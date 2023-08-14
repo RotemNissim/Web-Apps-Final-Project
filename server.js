@@ -5,6 +5,10 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+const path = require('path'); // This is the key part you were missing
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ... Your other middleware and routes setup ...
 
@@ -15,6 +19,8 @@ io.on('connection', (socket) => {
   // Handle incoming websocket events here
   // For example, you can emit events to specific clients or broadcast to all connected clients.
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server
 const port = process.env.PORT || 8080;
