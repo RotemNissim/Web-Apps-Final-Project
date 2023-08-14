@@ -18,7 +18,7 @@ const createDish = async (req, res) => {
     const err = new Error('All fields are required');
     alert (err);
   } else {if (_name.test(name) && _price.test(price) && _description.test(description00) && _allergenics.test(allergenics) && _restaurant.test(restaurant)){
-    const newDish = new Dish(); // create new instance of dish model
+    const newDish = new Dish(); //  create new instance of dish model
       newDish.name = name;
       newDish.price = price;
       newDish.description = description;
