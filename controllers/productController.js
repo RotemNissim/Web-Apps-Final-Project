@@ -17,7 +17,7 @@ export function createProduct (req, res) {
       newProduct.description = description;
       newProduct.allergenics = allergenics;
       newProduct.restaurant = restaurant;
-    newProduct.save((err, savedProduct));
+    newProduct.save(err, savedProduct);
   }
 }};
 
