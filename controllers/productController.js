@@ -26,11 +26,9 @@ export function createProduct (req, res) {
     });
   }}
 
+};
+  
 
-  // Validation: Check if required fields are present
-  if (!name || !price || !description || !allergenics || !restaurant) {
-    return res.status(400).json({ error: 'All fields are required' });
-  }
 
   // Create a new product
   const newProduct = new Product({
