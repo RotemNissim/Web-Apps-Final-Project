@@ -11,26 +11,18 @@ export function createProduct (req, res) {
     const err = new Error('All fields are required');
     alert (err);
   } else {if (_name.test(name) && _price.test(price) && _description.test(description00) && _allergenics.test(allergenics) && _restaurant.test(restaurant)){
-    const newProduct = new Product({
-      name,
-      price,
-      description,
-      allergenics,
-      restaurant,
-    });
-    newProduct.save((err, savedProduct) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to create product' });
-      }
-      return res.status(201).json(savedProduct);
-    });
-  }}
-
-
-  // Validation: Check if required fields are present
-  if (!name || !price || !description || !allergenics || !restaurant) {
-    return res.status(400).json({ error: 'All fields are required' });
+    const newProduct = new Product();
+      newProduct.name = name;
+      newProduct.price = price;
+      newProduct.description = description;
+      newProduct.allergenics = allergenics;
+      newProduct.restaurant = restaurant;
+    newProduct.save((err, savedProduct));
   }
+}};
+
+  
+
 
   // Create a new product
   const newProduct = new Product({
@@ -47,4 +39,4 @@ export function createProduct (req, res) {
     }
     return res.status(201).json(savedProduct);
   });
-}
+
