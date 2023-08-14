@@ -17,14 +17,10 @@ export function createProduct (req, res) {
       newProduct.description = description;
       newProduct.allergenics = allergenics;
       newProduct.restaurant = restaurant;
-    newProduct.save((err, savedProduct) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to create product' });
-      }
-      return res.status(201).json(savedProduct);
-    });
-  }}
-};
+    newProduct.save((err, savedProduct));
+  }
+}};
+
   
 
 
