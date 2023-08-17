@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Dish = require("../models/Dish");
+const Dish = require("../models/Dishes");
 
 const createDish = async (restaurant, name, price, description, allergenics, chef, tags, type) => {
   const dish = new Dish({

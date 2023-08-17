@@ -1,3 +1,5 @@
+<<<<<<< Rotemz
+=======
 const express = require('express');
 const restaurantService = require('./restaurantService'); // Adjust the path to your service
 
@@ -34,15 +36,3 @@ router.delete('/:restaurantId/removeDish/:dishId', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// Get the menu of the restaurant
-router.get('/:restaurantId/menu', async (req, res) => {
-  try {
-    const menu = await restaurantService.getMenu(req.params.restaurantId);
-    res.json(menu);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-module.exports = router;
