@@ -1,0 +1,31 @@
+<h1>Create Restaurant</h1>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-3">
+                <label class="control-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+                <span class="help-block"></span>
+                <div id ="name-error" class="help-block"></div>
+                <label class="control-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+                <span class="help-block"></span>
+                <div id ="address-error" class="help-block"></div>
+                <label class="control-label">cuisine</label>
+                <input type="text" class="form-control" id="cuisine" name="cuisine">
+                <span class="help-block"></span>
+                <div id ="cuisine-error" class="help-block"></div>
+                <label class="control-label">dishs</label>
+                <input type="Dish" class="form-control" id="dishes" name="dishes">
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button onclick="creatDish(req,res)" class="btn btn-default">Create Dish</button>
+                    </div>
+                </div>
+             </div>
+         <div class="form-group">
+               <div class="col-md-offset-3 col-md-9">
+                   <button onclick="createRestaurant()" class="btn btn-default">Create Restaurant</button>
+              </div>
+    
+        </div>
+    </div>
