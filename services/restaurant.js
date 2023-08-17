@@ -1,37 +1,50 @@
 
-const express = require('express');
-const restaurantService = require('../models/Restaurants'); // Adjust the path to your service
-
-const router = express.Router();
+const Restaurant = require('../models/Restaurants'); // Adjust the path to your service
 
 // Create Restaurant
-const createRestaurant = async (name, address, cuisine, dishes) => {
+const createRestaurant = async (name, address, cuisine) => {
   const rest = new Restaurant({
       name: name,
       address: address,
       cuisine: cuisine,
-      dishes: dishes,
   });
 
   return await rest.save();
 };
 
-// Add a dish to the menu
-router.post('/:restaurantId/addDish/:dishId', async (req, res) => {
-  try {
-    const message = await restaurantService.addDishToMenu(req.params.restaurantId, req.params.dishId);
-    res.json({ message });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+const deleteRestaurant = async (id) => {
+  const rest = await getRestaurantById(id);
+  if (!rest) {
+    return null;
   }
-});
+  await rest.remove();
+  return rest;
+};
 
-// Remove a dish from the menu
-router.delete('/:restaurantId/removeDish/:dishId', async (req, res) => {
-  try {
-    const message = await restaurantService.removeDishFromMenu(req.params.restaurantId, req.params.dishId);
-    res.json({ message });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+const editRestaurant = async (id, name, address, cuisine, dishes) => {
+  const rest = await getRestaurantById(id);
+  if (!rest) {
+    return null;
   }
-});
+  rest.name = name;
+  rest.address = address;
+  rest.cuisine = cuisine;
+  rest.dishes = dishes;
+  return await rest.save();
+};
+
+const getRestaurantById = async (id) => {
+  return await Restaurant.findById(id);
+};
+
+const getAllRestaurants = async () => {
+  return await Restaurant.find({});
+};
+
+module.exports = {
+  createRestaurant,
+  deleteRestaurant,
+  editRestaurant,
+  getRestaurantById,
+  getAllRestaurants
+};
