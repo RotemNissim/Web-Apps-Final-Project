@@ -1,5 +1,3 @@
-<<<<<<< Rotemz
-=======
 const express = require('express');
 const restaurantService = require('./restaurantService'); // Adjust the path to your service
 
