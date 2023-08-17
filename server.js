@@ -43,7 +43,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const session = require('express-session');
 
-const secretKey = process.env.SECRET_KEY;
+// const secretKey = process.env.SECRET_KEY;
 
 const env = process.env.NODE_ENV || 'local';
 
@@ -62,7 +62,7 @@ var app = express();
 
 app.use(
   session({
-    secret: secretKey,
+    secret: "nbVc7LoC6IDRigEwMFMkrq1tyaf90s3N",
         resave: false,
         saveUninitialized: true,
         cookie: { secure:false },
@@ -83,11 +83,10 @@ app.use(express.json());
  app.use('/admin',require('./routes/admin'));
  app.use('/carousel',require('./routes/carousel'));
  app.use('/login',require('./routes/login'));
- app.use('suppliers',require('./routes/restaurants'));
+ app.use('restaurants',require('./routes/restaurants'));
 
  const http = require('http').Server(app);
 
- http.listen(process.env.PORT || 8080);
-  server.listen(port, () => {
+ http.listen(process.env.PORT || 8080, () => {
  console.log(`Server is running on port ${port}`);
  });
