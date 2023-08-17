@@ -1,4 +1,3 @@
-
 const Restaurant = require('../models/Restaurants'); // Adjust the path to your service
 
 // Create Restaurant
