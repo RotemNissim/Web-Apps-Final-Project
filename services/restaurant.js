@@ -1,7 +1,6 @@
-<<<<<<< Rotemz
-=======
+
 const express = require('express');
-const restaurantService = require('./restaurantService'); // Adjust the path to your service
+const restaurantService = require('../models/Restaurants'); // Adjust the path to your service
 
 const router = express.Router();
 
