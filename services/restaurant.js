@@ -3,6 +3,18 @@ const restaurantService = require('./restaurantService'); // Adjust the path to 
 
 const router = express.Router();
 
+// Create Restaurant
+const createRestaurant = async (name, address, cuisine, dishes) => {
+  const rest = new Restaurant({
+      name: name,
+      address: address,
+      cuisine: cuisine,
+      dishes: dishes,
+  });
+
+  return await rest.save();
+};
+
 // Add a dish to the menu
 router.post('/:restaurantId/addDish/:dishId', async (req, res) => {
   try {
