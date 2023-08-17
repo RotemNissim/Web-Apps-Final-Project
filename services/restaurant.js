@@ -1,7 +1,20 @@
+
 const express = require('express');
-const restaurantService = require('./restaurantService'); // Adjust the path to your service
+const restaurantService = require('../models/Restaurants'); // Adjust the path to your service
 
 const router = express.Router();
+
+// Create Restaurant
+const createRestaurant = async (name, address, cuisine, dishes) => {
+  const rest = new Restaurant({
+      name: name,
+      address: address,
+      cuisine: cuisine,
+      dishes: dishes,
+  });
+
+  return await rest.save();
+};
 
 // Add a dish to the menu
 router.post('/:restaurantId/addDish/:dishId', async (req, res) => {
@@ -22,15 +35,3 @@ router.delete('/:restaurantId/removeDish/:dishId', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-// Get the menu of the restaurant
-router.get('/:restaurantId/menu', async (req, res) => {
-  try {
-    const menu = await restaurantService.getMenu(req.params.restaurantId);
-    res.json(menu);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-module.exports = router;
