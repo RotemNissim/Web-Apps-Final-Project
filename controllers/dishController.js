@@ -1,6 +1,5 @@
 const Dish = require("../models/Dishes");
 const restaurantService = require("../services/restaurant");
-const reviewService = require("../services/review");
 
 const index = async (req, res) => {
   const dishes = await restaurantService.getAllDishes();

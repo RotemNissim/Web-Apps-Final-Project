@@ -1,14 +1,27 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  dateOfBirth: {
-    type: Date,
-    required: true,
-  },
-  name: {
+  username: {
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  userTaz: {
+    type: integer,
+    required: true,
+  },
+  
   reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
 });
 
