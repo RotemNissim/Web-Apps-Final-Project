@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { index, login } = require('../controllers/auth');
+const { index, login } = require('../controllers/login');
 
 const {redirectIfAuthenticated} = require('../middlewares/login');
 

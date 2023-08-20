@@ -1,8 +1,8 @@
 const Dish = require("../models/Dishes");
-const restaurantService = require("../services/restaurant");
+const dishesService = require("../services/dishes");
 
 const index = async (req, res) => {
-  const dishes = await restaurantService.getAllDishes();
+  const dishes = await dishesService.getDishes();
   res.render("../views/dishes", { dishes });
 };
 

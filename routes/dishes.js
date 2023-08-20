@@ -23,4 +23,4 @@ router
 
 router.route('/api/dishes/type/:type').get(getDishesByType);
 
-module.exports = router;
+module.exports.router = router;

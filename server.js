@@ -40,19 +40,15 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-dotenv.config();
 const session = require('express-session');
 
-// const secretKey = process.env.SECRET_KEY;
+const env = process.env.NODE_ENV || "local";
 
-const env = process.env.NODE_ENV || 'local';
-
-dotenv.config({ path: __dirname + `./config/${env}.env` });
+dotenv.config({ path: __dirname + `/config/.env.${env}` });
 
 const { router: dishRouter } = require('./routes/dishes');
 
 mongoose.set('strictQuery',false);
-
 mongoose.connect(process.env.CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -87,6 +83,9 @@ app.use(express.json());
 
  const http = require('http').Server(app);
 
- http.listen(process.env.PORT || 8080, () => {
- console.log(`Server is running on port ${port}`);
+ const port = process.env.PORT || 8080;  // Define the port
+ 
+ http.listen(port, () => {
+   console.log(`Server is running on port ${port}`);
  });
+ 
