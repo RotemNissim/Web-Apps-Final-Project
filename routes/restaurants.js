@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {getRestaurants, createRestaurant, deleteRestaurant, editRestaurant} = require('../controllers/resController');
+const {getRestaurants, createRestaurant, deleteRestaurant, editRestaurant} = require('../controllers/restController');
 
 const router = express.Router();
 

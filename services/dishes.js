@@ -20,8 +20,15 @@ const getDishById = async (id) => {
   return await Dish.findById(id).populate("restaurant");
 };
 
-const getDishes = async () => {
-  return await Dish.find({}).populate("restaurant");
+const getDishes = async (params) => {
+  if (params?.limit) {
+    return await Dish.find({}).sort({ rating: -1 }).limit(limit).populate("restaurant");
+  }
+  if (params?.maxPrice) {
+    return await Dish.find({ Price: { $lte: Number(params.maxPrice) } }).sort({ rating: -1 }).populate("restaurant");
+  }
+return await Dish.find({}).populate("restaurant");
+  
 };
 
 const updateDish = async (id, name, price, description, allergenics, chef, tags, type) => {

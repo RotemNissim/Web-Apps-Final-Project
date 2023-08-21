@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Poppins-GoogleFonts';
+    src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+         url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+         url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+         url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+         url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+    /* Add more src declarations for other font formats if needed */
+    /* You can also include local() to provide local font fallbacks */
+  }
+  
+  /* Now you can use the font-family in your styles */
+  body {
+    font-family: 'Poppins-GoogleFonts', sans-serif;
+  }
+.dishes-list {
+    display: flex;
+}
+
+.dish {
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px;
+}
+
+.dish-img {
+    width: 100%;
+    height: auto;
+}
