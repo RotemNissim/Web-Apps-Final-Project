@@ -2,7 +2,7 @@
 const carouselContainer = document.querySelector('.carousel');
 
 // Fetch products for carousel
-fetch('/dishes/api')
+fetch('/dishes/api?limit=5')
   .then(response => response.json())
   .then(products => {
     // Populate the carousel with fetched product data

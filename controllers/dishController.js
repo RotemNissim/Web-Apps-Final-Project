@@ -66,7 +66,7 @@ const deleteDish = async (req, res) => {
 };
 
 const getDishes = async (req, res) => {
-  const dishes = await dishesService.getDishes(req.query.pageNum);
+  const dishes = await dishesService.getDishes(req.query || {});
   res.json(dishes);
 };
 

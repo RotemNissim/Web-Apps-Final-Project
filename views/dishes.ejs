@@ -9,6 +9,9 @@
 
   <section class="dishes">
     <h1>your Delicious Dishes</h1>
+    <h2>Max Price:</h2>
+    <input type="number" id="max-price"/>
+    <button id="search-button">search</button>
     <div class="dishes-list">
     <% dishes.forEach(dish => { %>
       <div class="dish">
@@ -23,6 +26,8 @@
   </section>
 
   <script src="/js/common.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/dishes.js"></script>
   <footer></footer>
 </body>
 </html>
