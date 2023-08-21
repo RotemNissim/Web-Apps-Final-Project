@@ -40,7 +40,7 @@
 
 // module.exports = router;
 
-const restService = require('./services/restaurant');
+const restService = require('../services/restaurant');
 
 const getRestaurants = async (req, res) => {
   const restaurants = await restService.getRestaurants();

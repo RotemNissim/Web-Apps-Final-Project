@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Poppins-GoogleFonts';
+    src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+         url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+         url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+         url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+         url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+    /* Add more src declarations for other font formats if needed */
+    /* You can also include local() to provide local font fallbacks */
+  }
+  
+  /* Now you can use the font-family in your styles */
+  body {
+    font-family: 'Poppins-GoogleFonts', sans-serif;
+  }
+  
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+  }
+  
+  .product {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    scroll-snap-align: start;
+  }
+  
+  .product img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .product span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f39c12;
+  }
+  

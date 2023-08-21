@@ -19,6 +19,10 @@ const dishSchema = new mongoose.Schema({
     required: true,
     min: 0, // Price cannot be negative
   },
+  imgUrl: {
+    type: String,
+    required: true,
+  },
   ranks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
   restaurant: {
     type: mongoose.Schema.Types.ObjectId,
@@ -32,6 +36,6 @@ const dishSchema = new mongoose.Schema({
   },
 });
 
-const Dish = mongoose.model('Dish', dishSchema);
+const Dish = mongoose.model('Dish', dishSchema, "Dishes");
 
 module.exports = Dish;

@@ -8,10 +8,10 @@ const {
     manageRestaurantsForm,
     createAdminForm,
     manageAdminsForm
-} = require('../controllers/admin');
+} = require('../controllers/adminController');
 
 const { requireAdminLogin } = require('../middlewares/login');
-const { createAdmin,getAdmin, deleteAdmin } = require('../controllers/admin');
+const { createAdmin,getAdmins, deleteAdmin } = require('../controllers/adminController');
 
 const router = express.Router();
 router.get("/",requireAdminLogin('/admin'),index);

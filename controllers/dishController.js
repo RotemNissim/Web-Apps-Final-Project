@@ -1,8 +1,10 @@
 const Dish = require("../models/Dishes");
-const restaurantService = require("../services/restaurant");
+const dishesService = require("../services/dishes");
 
 const index = async (req, res) => {
-  const dishes = await restaurantService.getAllDishes();
+  const dishes = await dishesService.getDishes();
+  console.log(dishes)
+  //const dishes = [{name: 'test', price: 3}]
   res.render("../views/dishes", { dishes });
 };
 
@@ -54,28 +56,28 @@ if(!_restaurant.test(restaurant)) {
 };
 
 const getDish = async (req, res) => {
-  const dish = await restaurantService.getDishById(req.params.id);
+  const dish = await dishesService.getDishById(req.params.id);
   res.json(dish);
 };
 
 const deleteDish = async (req, res) => {
-  const dish = await restaurantService.deleteDish(req.params.id);
+  const dish = await dishesService.deleteDish(req.params.id);
   res.json(dish);
 };
 
 const getDishes = async (req, res) => {
-  const dishes = await restaurantService.getDishes(req.query.pageNum);
+  const dishes = await dishesService.getDishes(req.query || {});
   res.json(dishes);
 };
 
 const getDishesByType = async (req, res) => {
-  const dishes = await restaurantService.getDishesByType(req.params.type);
+  const dishes = await dishesService.getDishesByType(req.params.type);
   res.json(dishes);
 };
 
 const editDish = async (req, res) => {
   const { allergenics, chef, description, name, price, tags, type } = req.body;
-  const dish = await restaurantService.editDish(
+  const dish = await dishesService.editDish(
     req.params.id,
     allergenics,
     chef,
