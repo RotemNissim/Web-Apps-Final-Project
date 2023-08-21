@@ -22,7 +22,7 @@ const getDishById = async (id) => {
 
 const getDishes = async (params) => {
   if (params?.limit) {
-    return await Dish.find({}).sort({ rating: -1 }).limit(limit).populate("restaurant");
+    return await Dish.find({}).sort({ rating: -1 }).limit(params.limit).populate("restaurant");
   }
   if (params?.maxPrice) {
     return await Dish.find({ Price: { $lte: Number(params.maxPrice) } }).sort({ rating: -1 }).populate("restaurant");
