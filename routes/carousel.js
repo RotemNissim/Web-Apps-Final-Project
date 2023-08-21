@@ -1,10 +1,10 @@
 // routes/carousel.js
 const express = require('express');
 const router = express.Router();
-const Product = require('../models/Product'); // Make sure the path is correct
+const Product = require('../models/Dishes'); // Make sure the path is correct
 
 // Fetch products for carousel
-router.get('/products', async (req, res) => {
+router.get('/dishes', async (req, res) => {
   try {
     const products = await Product.find().limit(5); // Fetch top 5 products
     res.json(products);

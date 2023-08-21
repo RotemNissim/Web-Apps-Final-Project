@@ -13,14 +13,14 @@ const {
 const router = express.Router();
 router.route('/').get(index);
 
-router.route('/api/dishes').post(createDish).get(getDishes);
+router.route('/api').post(createDish).get(getDishes);
 
 router
-.route('/api/dishes/:id')
+.route('/api/:id')
 .get(getDish)
 .delete(deleteDish)
 .put(editDish);
 
-router.route('/api/dishes/type/:type').get(getDishesByType);
+router.route('/api/type/:type').get(getDishesByType);
 
-module.exports = router;
+module.exports.router = router;
