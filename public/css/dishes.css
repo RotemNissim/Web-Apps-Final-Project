@@ -1,0 +1,14 @@
+.dishes-list {
+    display: flex;
+}
+
+.dish {
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px;
+}
+
+.dish-img {
+    width: 100%;
+    height: auto;
+}

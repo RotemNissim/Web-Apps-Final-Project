@@ -1,21 +1,25 @@
-<!-- views/dishes.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- ... Your head content -->
+  <link rel="stylesheet" href="/css/dishes.css" />
 </head>
 <body>
   <header></header>
 
   <section class="dishes">
-    <h1>Our Delicious Dishes</h1>
-    <div class="dish">
-      <!-- Dish 1 content -->
-    </div>
-    <div class="dish">
-      <!-- Dish 2 content -->
-    </div>
-    <!-- Add more dish content as needed -->
+    <h1>your Delicious Dishes</h1>
+    <div class="dishes-list">
+    <% dishes.forEach(dish => { %>
+      <div class="dish">
+        <img class="dish-img" src="<%=dish.imgUrl%>"/>
+        <h2><%= dish.name %></h2>
+        <p><%= dish.description %></p>
+        <p>Price: <%= dish.price %></p>
+        <!-- Add more details or formatting as needed -->
+      </div>
+    <% }); %>
+  </div>
   </section>
 
   <footer></footer>
