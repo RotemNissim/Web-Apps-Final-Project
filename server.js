@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
  //routes
- app.use('/', dishRouter);
+ app.use('/dishes', dishRouter);
  app.use('/about',require('./routes/about'));
  app.use('/admin',require('./routes/admin'));
  app.use('/carousel',require('./routes/carousel'));

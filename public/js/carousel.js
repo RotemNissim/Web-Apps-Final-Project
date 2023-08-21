@@ -2,7 +2,7 @@
 const carouselContainer = document.querySelector('.carousel');
 
 // Fetch products for carousel
-fetch('/carousel/products')
+fetch('/dishes/api')
   .then(response => response.json())
   .then(products => {
     // Populate the carousel with fetched product data
@@ -10,9 +10,10 @@ fetch('/carousel/products')
       const productElement = document.createElement('div');
       productElement.classList.add('product');
       productElement.innerHTML = `
+        <img src="${product.imgUrl}" alt="${product.name}">
         <h2>${product.name}</h2>
         <p>${product.description}</p>
-        <span>Price: $${product.price}</span>
+        <span>Price:${product.Price}₪</span>
       `;
       carouselContainer.appendChild(productElement);
     });
