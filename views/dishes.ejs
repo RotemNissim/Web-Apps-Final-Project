@@ -16,7 +16,11 @@
     <% dishes.forEach(dish => { %>
       <div class="dish">
         <img class="dish-img" src="<%=dish.imgUrl%>"/>
-        <h2><%= dish.name %></h2>
+        <a href="/dishes/productPage?id=<%= dish._id %>">
+          <div class="dish-name">
+            <h2><%= dish.name %></h2>
+          </div>
+        </a>
         <p><%= dish.description %></p>
         <p>Price: <%= dish.price %></p>
         <!-- Add more details or formatting as needed -->

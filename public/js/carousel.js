@@ -14,6 +14,7 @@ fetch('/dishes/api?limit=5')
         <h2>${product.name}</h2>
         <p>${product.description}</p>
         <span>Price:${product.Price}₪</span>
+        
       `;
       carouselContainer.appendChild(productElement);
     });
