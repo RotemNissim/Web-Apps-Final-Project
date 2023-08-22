@@ -34,20 +34,28 @@ header {
   
   .user-area {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .user-area a {
     text-decoration: none;
     color: #333;
     transition: color 0.3s ease;
+    margin: 0 5px;
+    display: flex;
   }
   
   .user-area a:hover {
+  
     color: #ff6347; /* Change to your desired color on hover */
   }
   .login-logo {
-    width: 30px;
+    width: 33px;
     margin-right:auto;
+    margin-top:10px;
+  
   }
   .shoppingCart-logo {
     width: 27px;
@@ -57,4 +65,3 @@ header {
     width: 23px;
     margin-right: auto;
   }
-  
