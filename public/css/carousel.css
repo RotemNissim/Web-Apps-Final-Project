@@ -1,15 +1,16 @@
-@font-face {
-    font-family: 'Poppins-GoogleFonts';
-    src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
-         url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
-         url('../assets/fonts/Poppins-Bold.woff') format('woff'),
-         url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
-         url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
-    /* Add more src declarations for other font formats if needed */
-    /* You can also include local() to provide local font fallbacks */
-  }
+/* Add this to your carousel.css file */
 
-  * {
+@font-face {
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+}
+
+/* Reset default margin and padding for elements */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,6 +25,11 @@ body {
 .carousel {
   position: relative;
   overflow: hidden;
+  margin: auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -32,7 +38,8 @@ body {
   display: flex;
   justify-content: center; /* Center the active product */
   align-items: flex-start; /* Align items to the top */
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  flex-wrap: nowrap;
   margin-bottom: 20px; /* Add some space at the bottom */
 }
 
@@ -115,38 +122,6 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-}
-
-.carousel {
-  position: relative;
-  overflow: hidden;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.carousel {
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-  max-width: 1000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-container {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-  flex-wrap: nowrap;
-  align-items: flex-start; /* Adjust as needed */
-  justify-content: center;
 }
 
 /* Media query for screens smaller than 768px */
