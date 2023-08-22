@@ -37,12 +37,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
  //routes
+ 
  app.use('/dishes', dishRouter);
  app.use('/about',require('./routes/about'));
  app.use('/admin',require('./routes/admin'));
  app.use('/carousel',require('./routes/carousel'));
  app.use('/login',require('./routes/login'));
  app.use('restaurants',require('./routes/restaurants'));
+ app.use('/shoppingCart',require('./routes/shoppingCart'));
 
  const http = require('http').Server(app);
 
