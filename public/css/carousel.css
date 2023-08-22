@@ -49,8 +49,8 @@ body {
 
 /* Styling for the product image */
 .product img {
-  max-width: 100%;
-  height: auto;
+  max-width: 20vw;
+  max-height: 13vw; 
 }
 
 /* Styling for the product name and price */
@@ -128,4 +128,39 @@ body {
   margin: auto;
   justify-content: center;
   align-items: center;
+}
+
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  flex-wrap: nowrap;
+  align-items: flex-start; /* Adjust as needed */
+  justify-content: center;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .carousel {
+    height: auto; /* Adjust as needed */
+  }
+
+  .carousel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    flex: 0 0 90%; /* Adjust as needed */
+  }
 }
