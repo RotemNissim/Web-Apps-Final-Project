@@ -43,6 +43,7 @@ app.use(express.json());
  app.use('/carousel',require('./routes/carousel'));
  app.use('/login',require('./routes/login'));
  app.use('restaurants',require('./routes/restaurants'));
+ app.use('/shoppingCart',require('./routes/shoppingCart'));
 
  const http = require('http').Server(app);
 

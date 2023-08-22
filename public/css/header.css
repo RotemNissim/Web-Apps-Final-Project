@@ -1,0 +1,60 @@
+/* header.css */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    width: 100px; /* Adjust the size as needed */
+    margin-right: 20px;
+  }
+  
+  nav {
+    flex: 1;
+  }
+  
+  nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ff6347; /* Change to your desired color on hover */
+  }
+  
+  /* .search-bar {
+    /* Add styling for the search bar
+  } */ */
+  
+  .user-area {
+    margin-left: auto;
+  }
+  
+  .user-area a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .user-area a:hover {
+    color: #ff6347; /* Change to your desired color on hover */
+  }
+  .login-logo {
+    width: 30px;
+    margin-right:auto;
+  }
+  .shoppingCart-logo {
+    width: 27px;
+    margin-right: auto;
+  }
+  .logout-logo {
+    width: 23px;
+    margin-right: auto;
+  }
+  
