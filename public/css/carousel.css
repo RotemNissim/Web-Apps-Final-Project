@@ -8,48 +8,124 @@
     /* Add more src declarations for other font formats if needed */
     /* You can also include local() to provide local font fallbacks */
   }
-  
-  /* Now you can use the font-family in your styles */
-  body {
-    font-family: 'Poppins-GoogleFonts', sans-serif;
-  }
-  
+
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply a common font style */
+body {
+  font-family: 'Poppins-GoogleFonts', sans-serif;
+}
+
+/* Styling for the carousel container */
 .carousel {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    padding: 20px;
-  }
-  
-  .product {
-    flex: 0 0 auto;
-    width: 300px;
-    margin-right: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    scroll-snap-align: start;
-  }
-  
-  .product img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .product h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
-  
-  .product p {
-    font-size: 1rem;
-    margin: 10px 0;
-  }
-  
-  .product span {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #f39c12;
-  }
-  
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Styling for the carousel content */
+.carousel-container {
+  display: flex;
+  justify-content: center; /* Center the active product */
+  align-items: flex-start; /* Align items to the top */
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* Add some space at the bottom */
+}
+
+/* Styling for each product within the carousel */
+.carousel-container > .product {
+  flex: 0 0 calc(100% / 3);
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for the product image */
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for the product name and price */
+.product h2, .product span {
+  margin-top: 10px;
+}
+
+/* Styling for the navigation arrows */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%; /* Make the arrows round */
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
+}
+
+/* Styling for the indicator circles */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align at the bottom */
+  width: 100%; /* Stretch the indicator circles across the carousel */
+  margin-top: 20px; /* Adjust the margin as needed */
+  margin-bottom: 10px; /* Move the indicators to the bottom */
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #999;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-indicator.active {
+  background-color: #333;
+}
+
+/* Styling for the "See All Dishes" button */
+.carousel-cta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.all-dishes-btn {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
