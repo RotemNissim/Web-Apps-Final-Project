@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin View</title>
-  <!-- Your CSS and other head content -->
+  <link rel="stylesheet" href="/css/index.css">
 
 </head>
 <body>
-  <!-- Your HTML content for the admin view -->
-  <h1>Welcome to Admin View</h1>
-  <!-- ... Other content specific to the admin view -->
+    <section class="home">
+  <h1>Welcome to Admin Page</h1>
+  <p>View & Edit your Products!</p>
+  <a class="read-more-btn" href="/admin/createDishForm">Add New Dish!</a>
+<div class="carousel">
+<a class="all-dishes-btn"href="/dishes"> See all dishes </a>
+</div>
+  <!-- Products carousel -->
+  <!-- ... Include your carousel here -->
+</section>
 
-  <!-- Include the Socket.io library -->
-  <script src="/socket.io/socket.io.js"></script>
-
-  <!-- Your client-side script specific to the admin view -->
-  <script>
-    const socket = io(); // Connect to the websocket server for admin view
-
-    // Handle incoming events from the server for admin view
-    socket.on('adminEvent', (data) => {
-      // Do something with the data received from the server for admin view
-    });
-
-    // Send data to the server for admin view
-    socket.emit('adminEvent', dataToSend);
-  </script>
+<script src="/js/common.js"></script>
+<script src="/js/carousel.js"></script> // connect with edition carusel
+<footer></footer>
 </body>
 </html>
