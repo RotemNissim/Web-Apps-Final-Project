@@ -5,20 +5,14 @@ const restaurantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  cuisine: {
-   type: [String],
-   required: true,
-  },
-  dishes: {
-    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Dish' }],
-    required: true,
-  },
+  cuisine: [String],
+  dishes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Dish' }],
   name: {
     type: String,
     required: true,
   },
 });
 
-const Restaurant = mongoose.model('Restaurant', restaurantSchema,"Restaurants");
+const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 module.exports = Restaurant;
