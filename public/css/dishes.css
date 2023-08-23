@@ -1,29 +1,96 @@
+/* Import the custom font */
 @font-face {
-    font-family: 'Poppins-GoogleFonts';
-    src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
-         url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
-         url('../assets/fonts/Poppins-Bold.woff') format('woff'),
-         url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
-         url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
-    /* Add more src declarations for other font formats if needed */
-    /* You can also include local() to provide local font fallbacks */
-  }
-  
-  /* Now you can use the font-family in your styles */
-  body {
-    font-family: 'Poppins-GoogleFonts', sans-serif;
-  }
-.dishes-list {
-    display: flex;
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+  /* Add more src declarations for other font formats if needed */
+  /* You can also include local() to provide local font fallbacks */
+}
+
+/* Apply the custom font to the entire page */
+body {
+  font-family: 'Poppins-GoogleFonts', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Hero section styles */
+.hero {
+  background-image: url('../assets/images/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+/* Featured dishes styles */
+.featured-dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .dish {
-    border: 1px solid black;
-    margin: 15px;
-    padding: 10px;
+  border: 1px solid #ddd;
+  margin: 15px;
+  padding: 10px;
+  max-width: 300px;
+  text-align: center;
 }
 
 .dish-img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
+
+/* Menu categories styles */
+.menu-categories {
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Individual dish styles */
+.individual-dish {
+  padding: 50px;
+  text-align: center;
+}
+
+/* About us styles */
+.about-us {
+  background-color: #f9f9f9;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Contact styles */
+.contact {
+  padding: 50px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Add media queries for responsive design if needed */
