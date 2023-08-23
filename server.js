@@ -38,6 +38,7 @@ app.use(express.json());
 
  //routes
  
+ app.use('/user',require('./routes/users'));
  app.use('/dishes', dishRouter);
  app.use('/about',require('./routes/about'));
  app.use('/admin',require('./routes/admin'));
