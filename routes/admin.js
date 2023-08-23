@@ -13,6 +13,7 @@ const {
 const { requireAdminLogin } = require('../middlewares/login');
 const { createAdmin,getAdmins, deleteAdmin } = require('../controllers/adminController');
 const { createDish } = require('../controllers/dishController');
+const { createRestaurant } = require('../controllers/restController');
 
 const router = express.Router();
 router.get("/",requireAdminLogin('/admin'),index);
@@ -30,6 +31,7 @@ router.get("/createAdminForm",requireAdminLogin('/admin'),createAdminForm);
 router.get("/manageAdminsForm",requireAdminLogin('/admin'),manageAdminsForm);
 
 router.route("/api/createDish").post(createDish);
+router.route("/api/createRestaurant").post(createRestaurant);
 router.route("/api").post(createAdmin).get(getAdmins);
 router.route("/api/:id").delete(deleteAdmin);
 

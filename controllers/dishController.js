@@ -9,15 +9,15 @@ const index = async (req, res) => {
 };
 
 const createDish = async (req, res) => {
-  const { name, price, description, allergenics, restaurant } = req.body;
+  const { name, Price, chef, ranks, tags, type, imgUrl, description, allergenics, restaurant } = req.body;
   try {
-    const savedDish = await dishesService.createDish(name, price, description, allergenics, restaurant);
+    const savedDish = await dishesService.createDish(name, Price, chef, ranks, tags, type, imgUrl, description, allergenics, restaurant);
     res.status(201).json(savedDish);
   } catch (error) {
     console.error('Failed to create', error);
     res.status(500).send('Internal Server Error');
   }
-
+ 
 //   const _name = /^[A-Z a-z]{2,30}$/;
 //   const _price = /^[0-9]{1,10}$/;
 //   const _description = /^[A-Z a-z]{2,200}$/;
@@ -84,16 +84,19 @@ const getDishesByType = async (req, res) => {
 };
 
 const editDish = async (req, res) => {
-  const { allergenics, chef, description, name, price, tags, type } = req.body;
+  const { name, Price, chef, ranks, tags, type, imgUrl, description, allergenics, restaurant } = req.body;
   const dish = await dishesService.editDish(
     req.params.id,
-    allergenics,
-    chef,
-    description,
     name,
-    price,
+    Price,
+    chef,
+    ranks,
     tags,
-    type
+    type,
+    imgUrl,
+    description,
+    allergenics, 
+    restaurant
   );
   res.json(dish);
 };
