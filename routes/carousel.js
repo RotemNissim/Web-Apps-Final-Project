@@ -5,6 +5,7 @@ const Product = require('../models/Dishes'); // Make sure the path is correct
 
 // Fetch products for carousel
 router.get('/dishes', async (req, res) => {
+  
   try {
     const products = await Product.find().limit(9); // Fetch top 5 products
     res.json(products);
