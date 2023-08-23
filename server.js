@@ -15,9 +15,7 @@ mongoose.set('strictQuery',false);
 mongoose.connect(process.env.CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(()=>{
-  console.log("DB IS ON")
-}).catch((err) => console.log("ERROR"));
+});
 
 var app = express();
 

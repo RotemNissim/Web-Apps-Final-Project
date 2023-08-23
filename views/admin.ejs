@@ -30,23 +30,3 @@
   </script>
 </body>
 </html>
-<!-- Add a logout button or link -->
-<button id="logoutBtn">Log Out</button>
-
-<script src="/js/common.js"></script>
-<script>
-  // Add event listener to the logout button
-  document.getElementById('logoutBtn').addEventListener('click', async () => {
-    try {
-      const response = await fetch('/logout', { method: 'GET' });
-      const data = await response.json();
-      if (data.message === 'Logout successful') {
-        // Redirect to the home page after successful logout
-        window.location.href = '/';
-      }
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  });
-</script>
-
