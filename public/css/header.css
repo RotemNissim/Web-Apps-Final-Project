@@ -10,7 +10,8 @@ header {
   }
   
   .logo {
-    width: 100px; /* Adjust the size as needed */
+    height: 25vh;
+    width: auto; /* Adjust the size as needed */
     margin-right: 20px;
   }
   
@@ -30,10 +31,6 @@ header {
     color: #ff6347; /* Change to your desired color on hover */
   }
   
-  /* .search-bar {
-    /* Add styling for the search bar
-  } */ */
-  
   .user-area {
     margin-left: auto;
     display: flex;
@@ -46,23 +43,24 @@ header {
     color: #333;
     transition: color 0.3s ease;
     margin: 0 5px;
-    display: flex;
+    /* display: flex; */
   }
   
   .user-area a:hover {
   
     color: #ff6347; /* Change to your desired color on hover */
   }
+
   .login-logo {
     width: 33px;
-    margin-right:auto;
-    margin-top:10px;
-  
+    margin-right:auto;  
   }
+
   .shoppingCart-logo {
     width: 27px;
     margin-right: auto;
   }
+
   .logout-logo {
     width: 23px;
     margin-right: auto;
