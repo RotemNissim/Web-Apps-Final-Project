@@ -28,5 +28,44 @@ document.addEventListener("DOMContentLoaded", function() {
     // Other vanilla JavaScript code here
 });
 
+function createDish() {
+    const name = $('#name').val();
+    const price = $('#price').val();
+    const description = $('#description').val();
+    const allergenics = $('#allergenics').val();
+    const chef = $('#chef').val();
+    const tags = $('#tags').val();
+    const type = $('#type').val();
+    const imgUrl = $('#imgUrl').val();
+    // ... Get other form values
+    
+    const newDish = {
+      name: name,
+      price: price,
+      description: description,
+      allergenics: allergenics,
+      chef: chef,
+      tags: tags,
+      type: type,
+      imgUrl: imgUrl
+      // ... Include other properties
+    };
+    console.log("Sending data:", newDish);
+    $.ajax({
+      type: 'POST',
+      url: '/admin/api/createDish', // Route to handle the dish creation on the server side
+      data: newDish,
+      success: function(newDish) {
+        // Handle the response here (e.g., show success message)
+        console.log('Dish created successfully');
+      },
+      error: function(error) {
+        // Handle the error here (e.g., show error message)
+        console.error('Error creating dish:', error);
+      }
+    });
+  }
+  
+
 
   
