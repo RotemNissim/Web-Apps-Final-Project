@@ -17,8 +17,8 @@
     <div class="dishes-list">
     <% dishes.forEach(dish => { %>
       <div class="dish">
-        <img class="dish-img" src="<%=dish.imgUrl%>"/>
         <a href="/dishes/productPage?id=<%= dish._id %>">
+        <img class="dish-img" src="<%=dish.imgUrl%>"/>
           <div class="dish-name">
             <h2><%= dish.name %></h2>
           </div>
