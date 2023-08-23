@@ -5,7 +5,8 @@ const adminService = require('../services/admin');
 const index = (req, res) => {
     res.render('../views/login.ejs', {errors: [], username: ''});
 };
-login = async (req, res) => {
+
+const login = async (req, res) => {
     const { username, password } = req.body;
     const admin = await adminService.getAdmin(username);
 
@@ -20,7 +21,6 @@ login = async (req, res) => {
             // return res.status(404).json({errors: ['invalid username or password']});
     }
     console.log('login success');
-    console.log(admin);
     req.session.adminId = admin._id;
     return res.redirect('/admin');
     // return res.status(200).json({messsge: 'login success'});

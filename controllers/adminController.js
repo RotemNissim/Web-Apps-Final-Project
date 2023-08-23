@@ -1,13 +1,11 @@
 const adminService = require('../services/admin');
-const resService = require('../services/restaurant');
-const dishesService = require('../services/dishes');
+
 const index = async (req, res) => {
     res.render('../views/admin.ejs');
 };
 
-const createDishForm =  async (req, res) => {
-    const allRest = await resService.getAllRestaurants();
-    res.render('../views/forms-admin/createDish.ejs',{allRest: allRest});
+const createDishForm = (req, res) => {
+    res.render('../views/forms-admin/createDish.ejs');
     };
 
 
@@ -15,9 +13,8 @@ const manageDishesForm = (req, res) => {
     res.render('../views/forms-admin/manageDishes.ejs');
     };
 
-const createRestaurantForm = async (req, res) => {
-    const allDishes = await dishesService.getAllDishes();
-        res.render('../views/forms-admin/createRestaurant.ejs', {allDishes: allDishes});
+const createRestaurantForm = (req, res) => {
+        res.render('../views/forms-admin/createRestaurant.ejs');
                 };
 
 const manageRestaurantsForm = (req, res) => {

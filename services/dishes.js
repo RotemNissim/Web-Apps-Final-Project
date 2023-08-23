@@ -1,18 +1,16 @@
 const mongoose = require('mongoose');
 const Dish = require("../models/Dishes");
 
-const createDish = async (name, price, chef, ranks, tags, type, imgUrl, description, allergenics, restaurant) => {
+const createDish = async (restaurant, name, price, description, allergenics, chef, tags, type) => {
   const dish = new Dish({
+    restaurant: restaurant,
     name: name,
-    Price: price,
-    chef: chef,
-    ranks: ranks,
-    tags: tags,
-    type: type,
-    imgUrl: imgUrl,
+    price: price,
     description: description,
     allergenics: allergenics,
-    restaurant: restaurant,
+    chef: chef,
+    tags: tags,
+    type: type,
   });
 
   return await dish.save();
@@ -61,15 +59,10 @@ const deleteDish = async (id) => {
   return dish;
 };
 
-const getAllDishes = async () => {
-  return await Dish.find({});
-};
-
 module.exports = {
   createDish,
   getDishById,
   getDishes,
   updateDish,
   deleteDish,
-  getAllDishes,
 };

@@ -32,18 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
       updateCarousel();
   
-      carouselPrev.addEventListener('click', (event) => {
-        event.preventDefault();
+      carouselPrev.addEventListener('click', () => {
         currentIndex = (currentIndex - productsPerSlide + products.length) % products.length;
         updateCarousel();
-        event.stopPropagation();
       });
   
-      carouselNext.addEventListener('click', (event) => {
-        event.preventDefault();
+      carouselNext.addEventListener('click', () => {
         currentIndex = (currentIndex + productsPerSlide) % products.length;
         updateCarousel();
-        event.stopPropagation();
       });
     });
 });
