@@ -1,39 +1,48 @@
 const mongoose = require('mongoose');
 
 const dishSchema = new mongoose.Schema({
-  allergenics: {
-    type: [String],
-    required: true,
-  },
-  chef: String,
-  description: {
+    name: {
     type: String,
     required: true,
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  price: {
+   Price: {
     type: Number,
     required: true,
     min: 0, // Price cannot be negative
   },
-  imgUrl: {
+    chef: { 
     type: String,
     required: true,
   },
-  ranks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
-  restaurant: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Restaurant',
-    required: true,
+  ranks: {
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
   },
-  tags: [String],
+  tags: {
+   type: [String],
+   required: true,
+  },
   type: {
     type: String,
     required: true,
   },
+ imgUrl: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  allergenics: {
+    type: [String],
+    required: true,
+  },
+ restaurant: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Restaurant',
+    required: true,
+  },
+  
 });
 
 const Dish = mongoose.model('Dish', dishSchema, "Dishes");
