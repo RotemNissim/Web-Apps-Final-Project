@@ -1,10 +1,4 @@
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/dishes.js"></script>
-</head>
-
-<body>
-    <h1>Create dish</h1>
+<h1>Create dish</h1>
     <div class="form-horizontal">
         <div class="form-group">
             <div class="col-md-3">
@@ -12,52 +6,34 @@
                 <input type="text" class="form-control" id="name" placeholder="name">
                 <span class="help-block"></span>
                 <div id="name-error" class="help-block"></div>
-                
                 <label class="control-label">Price</label>
-                <input type="text" class="form-control" id="Price" placeholder="price">
+                <input type="text" class="form-control" id="price" placeholder="price">
                 <span class="help-block"></span>
                 <div id="price-error" class="help-block"></div>
-                
                 <label class="control-label">Description</label>
                 <input type="text" class="form-control" id="description" placeholder="description">
                 <span class="help-block"></span>
                 <div id="description-error" class="help-block"></div>
-                
                 <label class="control-label">Allergenics</label>
                 <input type="text" class="form-control" id="allergenics" placeholder="allergenics">
                 <span class="help-block"></span>
                 <div id="allergenics-error" class="help-block"></div>
-                
                 <label class="control-label">Chef</label>
                 <input type="text" class="form-control" id="chef" placeholder="chef">
                 <span class="help-block"></span>
                 <div id="chef-error" class="help-block"></div>
-                
                 <label class="control-label">Tags</label>
                 <input type="text" class="form-control" id="tags" placeholder="tags">
                 <span class="help-block"></span>
                 <div id="tags-error" class="help-block"></div>
-                
                 <label class="control-label">Type</label>
                 <input type="text" class="form-control" id="type" placeholder="type">
                 <span class="help-block"></span>
-                <div id="type-error" class="help-block"></div>
-                
-                <label class="control-label">Image URL:</label>
-                <input type="text" class="form-control" id="imgUrl" placeholder="image URL">
-                <span class="help-block"></span>
-                <div id="imgUrl-error" class="help-block"></div>
             </div>
-            <label class="control-label">Restaurant:</label>
-<select class="form-control" id="restaurant" name="restaurant">
-  <% allRest.forEach(restaurant => { %>
-    <script>console.log(allRest);</script>
-    <option value="<%= restaurant._id %>"><%= restaurant.name %></option>
-  <% }); %>
-</select>
-<span class="help-block"></span>
-<div id="restaurant-error" class="help-block"></div>
-
+                <label class="imgUrl">Image URL:</label>
+                <input type="text" class="form-control" id="imgUrl" placeholder="type">
+                <span class="help-block"></span>
+            </div>
         </div>
         <div class="form-group">
             <div class="col-md-offset-3 col-md-9">
@@ -65,4 +41,5 @@
             </div>
         </div>
     </div>
-</body>
+
+<script src="/js/dishes.js"></script>
