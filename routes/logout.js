@@ -1,17 +1,24 @@
 const express = require('express');
-const { index, login } = require('../controllers/login');
-const { redirectIfAuthenticated } = require('../middlewares/login');
+const { logout } = require('../middlewares/logout'); // Import the logout middleware
 
 const router = express.Router();
 
-// Logout route definition
-router.get('/logout', (req, res) => {
-  // Clear session data here (if applicable)
-  // Redirect to login page or home page
-  res.redirect('/login'); // Example: Redirect to login page
+// router.route('/')
+//   .get((req, res) => {
+//     // Clear session data here (if applicable)
+//     req.session.destroy((err) => {
+//       if (err) {
+//         console.error('Logout error:', err);
+//         return res.status(500).json({ message: 'Logout failed' });
+//       }
+//       // Redirect to login page or home page
+//       res.redirect('/index.html'); // or any appropriate route
+//     });
+//   });
+
+router.route('/').get((req, res) => {
+  logout(req, res); // Call the logout middleware's function
 });
 
-// Index and login routes
-router.route('/').get(redirectIfAuthenticated, index).post(login);
 
 module.exports = router;
