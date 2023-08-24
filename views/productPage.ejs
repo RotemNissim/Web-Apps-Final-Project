@@ -21,7 +21,7 @@
       <p><%= product.description %></p>
       <p>Price: <%= product.price %> ₪</p>
       <p>Category: <%= product.category %></p>
-      <!-- Add more product information as needed -->
+      <button id="addToCartBtn" data-name="<%= product.name %>" data-price="<%= product.price %>">Add to Cart</button>
     </section>
 
 
@@ -38,4 +38,5 @@
   </footer>
 </body>
 <script src="/js/common.js"></script>
+<script src="/js/shoppingCart.js"></script>
 </html>

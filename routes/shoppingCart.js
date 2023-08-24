@@ -1,13 +1,9 @@
-// routes/shoppingCart.js
 const express = require('express');
 const router = express.Router();
 
-router.route('/shoppingCart')
-  .get((req, res) => {
-    // Fetch the items from the cart (if stored in local storage)
-    const cartItems = []; // You need to fetch your cart items here
-
-    res.render('shoppingCart', { cartItems });
-  });
+router.route('/shoppingCart').get((req, res) => {
+  // Render the shoppingCart.ejs view
+  res.render('../views/shoppingCart.ejs');
+});
 
 module.exports = router;
