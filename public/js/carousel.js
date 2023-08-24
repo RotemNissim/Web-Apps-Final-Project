@@ -19,9 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const productElement = document.createElement('div');
           productElement.classList.add('product');
           productElement.innerHTML = `
+          <a href="/dishes/productPage?id=${product._id}">
             <img src="${product.imgUrl}" alt="${product.name}">
             <h2>${product.name}</h2>
+          </a>
             <span>Price: ${product.Price}₪</span>
+        
           `;
           carouselContainer.appendChild(productElement);
         }

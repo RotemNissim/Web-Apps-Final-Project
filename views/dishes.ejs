@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ... Your head content -->
+  <link rel="stylesheet" href="/css/dishes.css" />
+  <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/dishes.css">
@@ -12,6 +16,27 @@
         <!-- Header content here -->
     </header>
 
+  <section class="dishes">
+    <h1>your Delicious Dishes</h1>
+    <h2>Max Price:</h2>
+    <input type="number" id="max-price"/>
+    <button id="search-button">search</button>
+    <div class="dishes-list">
+    <% dishes.forEach(dish => { %>
+      <div class="dish">
+        <a href="/dishes/productPage?id=<%= dish._id %>">
+       <img class="dish-img" src="<%=dish.imgUrl%>"/>
+          <div class="dish-name">
+            <h2><%= dish.name %></h2>
+          </div>
+        </a>
+        <p><%= dish.description %></p>
+        <p>Price: <%= dish.price %></p>
+        <!-- Add more details or formatting as needed -->
+      </div>
+    <% }); %>
+  </div>
+  </section>
     <section class="dishes">
         <h1>Your Delicious Dishes</h1>
         <h2>Max Price:</h2>

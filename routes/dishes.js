@@ -12,6 +12,7 @@ const {
 
 const router = express.Router();
 router.route('/').get(index);
+
 router.route('/api').post(createDish).get(getDishes);
 
 router
@@ -19,7 +20,6 @@ router
 .get(getDish)
 .delete(deleteDish)
 .put(editDish);
-
 
 router.route('/api/type/:type').get(getDishesByType);
 
