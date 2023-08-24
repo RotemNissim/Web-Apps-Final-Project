@@ -24,11 +24,11 @@ const ordersSchema = new mongoose.Schema({
         required: true,
     },
     TA: {
-        type: boolean,
+        type: Boolean,
         required: true,
     },
     delivery: {
-        type: boolean,
+        type: Boolean,
         required: true,
     },
 });
