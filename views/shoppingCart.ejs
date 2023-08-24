@@ -1,7 +1,23 @@
-<ul>
-    <% cart.forEach(item => { %>
-      <li><%= item.name %> - Quantity: <%= item.quantity %></li>
-    <% }); %>
-  </ul>
+<!-- cart.ejs -->
 
-  <script src="/js/shoppingCart.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div id="cart-container">
+        <% cart.forEach(product => { %>
+            <div class="product">
+                <p><%= product.name %></p>
+            </div>
+        <% }); %>
+    </div>
+    <script>
+        const cart = <%- JSON.stringify(cart) %>;
+    </script>
+</body>
+</html>
