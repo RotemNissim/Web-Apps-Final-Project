@@ -40,7 +40,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
  //routes
- 
+ app.post('/admin/register', adminController.createAdmin);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
  app.use('/dishes', dishRouter);
  app.use('/about',require('./routes/about'));
  app.use('/admin',require('./routes/admin'));
