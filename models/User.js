@@ -21,8 +21,6 @@ const userSchema = new mongoose.Schema({
     type: integer,
     required: true,
   },
-  
-  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
 });
 
 const User = mongoose.model('User', userSchema);
