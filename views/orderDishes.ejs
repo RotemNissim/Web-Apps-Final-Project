@@ -1,0 +1,26 @@
+<!-- views/orderDishes.ejs -->
+
+<h1>Executed Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>User</th>
+      <th>Date</th>
+      <th>Total Price</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <% orders.forEach(order => { %>
+      <tr>
+        <td><%= order._id %></td>
+        <td><%= order.user %></td>
+        <td><%= order.date %></td>
+        <td><%= order.totalPrice %></td>
+        <!-- Add more columns as needed -->
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

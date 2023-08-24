@@ -10,6 +10,7 @@ const  logoutRoute = require('./routes/logout');
 const cartRoute = require('./routes/shoppingCart');
 const checkoutRoute = require('./routes/checkout');
 
+const ordersRouter = require('./routes/orderDishes')
 const env = process.env.NODE_ENV || "local";
 
 dotenv.config({ path: __dirname + `/config/.env.${env}` });
@@ -53,6 +54,8 @@ app.use(express.json());
  app.use('/shoppingCart',cartRoute);
  app.use('/checkout',checkoutRoute);
 
+ app.use('/shoppingCart',require('./routes/shoppingCart'));
+app.use('/Orders',ordersRouter)
  const http = require('http').Server(app);
 
  const port = process.env.PORT || 8080;

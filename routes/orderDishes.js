@@ -1,4 +1,5 @@
 const express = require('express');
+
 const {
     index,
     createOrder,
@@ -7,8 +8,7 @@ const {
 } = require('../controllers/orderDishes');
 
 const router = express.Router();
-
-router.route('/').get(index);
+router.route('/').get (index);
 
 router.route('/api/Orders').post(createOrder).get(getOrders);
 
