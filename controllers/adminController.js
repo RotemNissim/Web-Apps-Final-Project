@@ -31,13 +31,16 @@ const manageAdminsForm = (req, res) => {
 
     const createAdmin = async (req, res) => {
         try {
+            console.log("Request Body:", req.body); // Log the request body for debugging
             const admin = await adminService.createAdmin(req.body);
+            console.log("Created Admin:", admin); // Log the created admin for debugging
             res.status(201).send(admin);
         } catch (error) {
-            res.status(400).send(error);
+            console.error("Error Creating Admin:", error); // Log the error for debugging
+            res.status(400).send(error.message || "An error occurred while creating admin.");
         }
     };
-
+    
     const deleteAdmin = async (req, res) => {
         try {
             const admin = await adminService.deleteAdmin(req.params.id);
