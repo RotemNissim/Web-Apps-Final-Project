@@ -1,20 +1,23 @@
-const CART_KEY = 'myCart';
+document.addEventListener('DOMContentLoaded', () => {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-const getCart = () => {
-  const cart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  return cart;
-};
+  const addToCartButton = document.getElementById('addToCartBtn');
 
-const addToCart = (product) => {
-  const cart = getCart();
-  cart.push(product);
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
-};
+  addToCartButton.addEventListener('click', () => {
+    const productName = addToCartButton.getAttribute('data-name');
+    const productPrice = addToCartButton.getAttribute('data-price');
 
-const removeFromCart = (productId) => {
-  const cart = getCart();
-  const updatedCart = cart.filter((product) => product.id !== productId);
-  localStorage.setItem(CART_KEY, JSON.stringify(updatedCart));
-};
+    // Add the product to the cart
+    cart.push({
+      name: productName,
+      price: productPrice,
+    });
+console.log(cart);
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-export { getCart, addToCart, removeFromCart };
+    // You might also want to display a message to the user
+    alert('Product added to cart!');
+  });
+
+  // ... Your previous cart rendering logic here ...
+});
