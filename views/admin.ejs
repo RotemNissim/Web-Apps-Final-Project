@@ -6,47 +6,43 @@
   <title>Admin View</title>
   <!-- Your CSS and other head content -->
   <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
+  <link rel="stylesheet" href="/css/admin.css"> <!-- Include your custom CSS file -->
 
 </head>
 <body>
+  <header></header>
   <!-- Your HTML content for the admin view -->
   <h1>Welcome to Admin View</h1>
   <!-- ... Other content specific to the admin view -->
-
+  <div class="button-container">
+    <a class="admin-button" href="/admin/createDishForm">Create Dish Form</a>
+    <a class="admin-button" href="/admin/manageDishesForm">Manage Dishes Form</a>
+    <a class="admin-button" href="/admin/createRestaurantForm">Create Restaurant Form</a>
+    <a class="admin-button" href="/admin/manageRestaurantsForm">Manage Restaurants Form</a>
+    <a class="admin-button" href="/admin/createAdminForm">Create Admin Form</a>
+    <a class="admin-button" href="/admin/manageAdminsForm">Manage Admins Form</a>
+  </div>
   <!-- Include the Socket.io library -->
-  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script src="/socket.io/socket.io.js"></script>
 
-  <!-- Your client-side script specific to the admin view -->
+   Your client-side script specific to the admin view
   <script>
-    const socket = io(); // Connect to the websocket server for admin view
+    // const socket = io(); // Connect to the websocket server for admin view
 
     // Handle incoming events from the server for admin view
-    socket.on('adminEvent', (data) => {
+    // socket.on('adminEvent', (data) => {
       // Do something with the data received from the server for admin view
-    });
+    // });
 
     // Send data to the server for admin view
-    socket.emit('adminEvent', dataToSend);
-  </script>
+    // socket.emit('adminEvent', dataToSend); -->
+  </script> 
+  <footer></footer>
 </body>
 </html>
 <!-- Add a logout button or link -->
-<button id="logoutBtn">Log Out</button>
 
 <script src="/js/common.js"></script>
-<script>
-  // Add event listener to the logout button
-  document.getElementById('logoutBtn').addEventListener('click', async () => {
-    try {
-      const response = await fetch('/logout', { method: 'GET' });
-      const data = await response.json();
-      if (data.message === 'Logout successful') {
-        // Redirect to the home page after successful logout
-        window.location.href = '/';
-      }
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
-  });
-</script>
+<script src="/js/logout.js"></script>
+
 

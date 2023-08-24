@@ -5,7 +5,7 @@ const logout = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    return res.redirect("/login");
+    return res.json({ message: 'Logout successful' }); // Return a JSON response
   });
 };
 
