@@ -8,6 +8,7 @@ const session = require('express-session');
 const { router: dishRouter } = require('./routes/dishes');
 const  logoutRoute = require('./routes/logout');
 const cartRoute = require('./routes/shoppingCart');
+const checkoutRoute = require('./routes/checkout');
 
 const env = process.env.NODE_ENV || "local";
 
@@ -50,6 +51,7 @@ app.use(express.json());
  app.use('/logout',logoutRoute);
  app.use('restaurants',require('./routes/restaurants'));
  app.use('/shoppingCart',cartRoute);
+ app.use('/checkout',checkoutRoute);
 
  const http = require('http').Server(app);
 
