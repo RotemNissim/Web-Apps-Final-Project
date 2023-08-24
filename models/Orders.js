@@ -23,12 +23,16 @@ const ordersSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    TA: {
-        type: boolean,
-        required: true,
-    },
-    delivery: {
-        type: boolean,
-        required: true,
-    },
+    // TA: {
+    //     type: boolean,
+    //     required: true,
+    // },
+    // delivery: {
+    //     type: boolean,
+    //     required: true,
+   // },
 });
+
+const Order = mongoose.model('Order',ordersSchema, "Order");
+
+module.exports = Order;

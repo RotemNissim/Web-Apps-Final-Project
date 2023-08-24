@@ -8,6 +8,7 @@ const session = require('express-session');
 const { router: dishRouter } = require('./routes/dishes');
 const  logoutRoute = require('./routes/logout');
 
+const ordersRouter = require('./routes/orderDishes')
 const env = process.env.NODE_ENV || "local";
 
 dotenv.config({ path: __dirname + `/config/.env.${env}` });
@@ -49,7 +50,7 @@ app.use(express.json());
  app.use('/logout',logoutRoute);
  app.use('restaurants',require('./routes/restaurants'));
  app.use('/shoppingCart',require('./routes/shoppingCart'));
-
+app.use('/Orders',ordersRouter)
  const http = require('http').Server(app);
 
  const port = process.env.PORT || 8080;
