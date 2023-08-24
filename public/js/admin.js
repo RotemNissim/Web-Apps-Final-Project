@@ -25,3 +25,42 @@ function displayDishes(dishes) {
   `).join('');
   adminDataContainer.innerHTML = dishesHTML;
 }
+$(document).ready(() => {
+  // Your jQuery code here
+  
+  $('#search-button').on('click', async () => {
+    // ... Existing code for fetching dishes
+  });
+
+  $('#admin-register-button').on('click', () => {
+    const username = $('#admin-username').val();
+    const password = $('#admin-password').val();
+
+    const newAdmin = {
+      username: username,
+      password: password
+    };
+
+    console.log("Sending data:", newAdmin);
+
+    $.ajax({
+      type: 'POST',
+      url: '/admin/api/createAdmin', // Route to handle admin creation on the server side
+      data: JSON.stringify(newAdmin),
+      contentType: 'application/json',
+      dataType: 'json',
+      success: function(data) {
+        console.log('Admin created successfully', data);
+        // Handle the response here (e.g., show success message)
+      },
+      error: function(error) {
+        console.error('Error creating admin:', error);
+        // Handle the error here (e.g., show error message)
+      }
+    });
+  });
+  
+  // Other jQuery code here
+});
+
+// Other vanilla JavaScript code here
