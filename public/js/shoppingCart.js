@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 console.log(cart);
     localStorage.setItem('cart', JSON.stringify(cart));
-
+    window.location.href = `/shoppingCart?cart=${encodeURIComponent(JSON.stringify(cart))}`;
     // You might also want to display a message to the user
     alert('Product added to cart!');
   });
