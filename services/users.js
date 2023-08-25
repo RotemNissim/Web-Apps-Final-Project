@@ -21,11 +21,25 @@ try {
 }
 };
 
+getUserByUserName = async (username) => {
+    try {
+        const user = await User.findOne( {username} );
+        if (!user) {
+            throw new Error('User not found');
+        }
+        return user;
+    } catch(error) {
+        throw error;
+    }
+    };
+
 
 
 
 
 module.exports = {
     createUser,
-    getUser
+    getUser,
+    getUserByUserName,
+    
 };
