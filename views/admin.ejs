@@ -6,13 +6,22 @@
   <title>Admin View</title>
   <!-- Your CSS and other head content -->
   <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
+  <link rel="stylesheet" href="/css/admin.css"> <!-- Include your custom CSS file -->
 
 </head>
 <body>
+  <header></header>
   <!-- Your HTML content for the admin view -->
   <h1>Welcome to Admin View</h1>
   <!-- ... Other content specific to the admin view -->
-
+  <div class="button-container">
+    <a class="admin-button" href="/admin/createDishForm">Create Dish Form</a>
+    <a class="admin-button" href="/admin/manageDishesForm">Manage Dishes Form</a>
+    <a class="admin-button" href="/admin/createRestaurantForm">Create Restaurant Form</a>
+    <a class="admin-button" href="/admin/manageRestaurantsForm">Manage Restaurants Form</a>
+    <a class="admin-button" href="/admin/createAdminForm">Create Admin Form</a>
+    <a class="admin-button" href="/admin/manageAdminsForm">Manage Admins Form</a>
+  </div>
   <!-- Include the Socket.io library -->
   <!-- <script src="/socket.io/socket.io.js"></script>
 
@@ -26,12 +35,12 @@
     // });
 
     // Send data to the server for admin view
-    // socket.emit('adminEvent', dataToSend);
+    // socket.emit('adminEvent', dataToSend); -->
   </script> 
+  <footer></footer>
 </body>
 </html>
-Add a logout button or link -->
-<button id="logoutBtn">Log Out</button>
+<!-- Add a logout button or link -->
 
 <script src="/js/common.js"></script>
 <script src="/js/logout.js"></script>

@@ -1,43 +1,29 @@
-const User = require('../models/User');
+const userServices = require('../services/users');
 
-exports.registerUser = (req, res) => {
-  const { name, dateOfBirth } = req.body;
-  console.log(req.body);
-  // Validation: Check if required fields are present
-  if (!name ||!dateOfBirth) {
-    return res.status(400).json({ error: 'Name and Date of Birth are required' });
-  }
-  const _name = /^[A-Z a-z]{2,30}$/;
-  if (!_name.test(name)) {
-    return res.status(400).json({ error: 'Name must be between 2 and 30 characters long' });
-  }
-  if (typeof (dateOfBirth) != typeof(Date())) {
-  return res.status(400).json({ error: 'Date of Birth must be a valid date' });
-  }else{if(dateOfBirth >= Date(today.getFullYear()-12, today.getMonth, today.getDate())){
-    return res.status(400).json({ error: 'User must be 12 years old or older ' });
-  }
-    // Create a new user
-    const newUser = new User();
-    newUser.name = name;
-    newUser.dateOfBirth = dateOfBirth;
-  }
-  newUser.save(err, savedUser);
+
+const createUser = async (req, res) => {
+    try {
+        const newUser = await userServices.createUser(req.body);
+        res.status(201).send({ id: newUser.id });
+        // res.redirect('/users/' + newUser.id);
+    } catch (error) {
+        res.status(400).send(error);
+    }
 };
 
-  // Validation: Check if required fields are present
-  if (!name || !dateOfBirth) {
-    return res.status(400).json({ error: 'Name and Date of Birth are required' });
-  }
 
-  // Create a new user
-  const newUser = new User({
-    name,
-    dateOfBirth,
-  });
 
-  newUser.save((err, savedUser) => {
-    if (err) {
-      return res.status(500).json({ error: 'Failed to register user' });
+const getUserArea = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const user = await userServices.getUser(userId);
+        res.render('../views/userView.ejs', { user: user });
+    } catch (error) {
+        res.status(400).send(error);
     }
-    return res.status(201).json(savedUser);
-  });
+};
+
+module.exports = {
+    createUser,
+    getUserArea
+};

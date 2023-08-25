@@ -12,8 +12,6 @@ const {
 
 const { requireAdminLogin } = require('../middlewares/login');
 const { createAdmin,getAdmins, deleteAdmin } = require('../controllers/adminController');
-const { createDish } = require('../controllers/dishController');
-const { createRestaurant } = require('../controllers/restController');
 
 const router = express.Router();
 router.get("/",requireAdminLogin('/admin'),index);

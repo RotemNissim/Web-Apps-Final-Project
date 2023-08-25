@@ -18,13 +18,11 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   userTaz: {
-    type: integer,
+    type: Number,
     required: true,
   },
-  
-  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema,"Users");
 
 module.exports = User;
