@@ -1,0 +1,20 @@
+/* public/css/admin.css */
+
+/* Style for admin buttons */
+.admin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-button:hover {
+    background-color: #555;
+  }
+  
