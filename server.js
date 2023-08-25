@@ -55,10 +55,9 @@ app.use(express.json());
  app.use('/restaurants',require('./routes/restaurants'));
  app.use('/shoppingCart',require('./routes/shoppingCart'));
  app.use('/users' ,userRoute);
-
-
  app.use('/shoppingCart',require('./routes/shoppingCart'));
-app.use('/Orders',ordersRouter)
+ app.use('/Orders',ordersRouter);
+ 
  const http = require('http').Server(app);
 
  const port = process.env.PORT || 8080;
