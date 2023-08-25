@@ -16,7 +16,7 @@ const manageDishesForm = (req, res) => {
     };
 
 const createRestaurantForm = async (req, res) => {
-    const allDishes = await dishesService.getAllDishes();
+    const allDishes = await dishesService.getDishes();
         res.render('../views/forms-admin/createRestaurant.ejs', {allDishes: allDishes});
                 };
 
