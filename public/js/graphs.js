@@ -1,23 +1,26 @@
-// Fetch orders data from backend
 
 
-fetch('/Orders/api/OrdersByDate')
-   .then(response => response.json())
-   .then(OrdersByDates => {
-     // Process and use the data here
+// Fetch orders data from backend using AJAX
+$.ajax({
+  url: '/Orders/api/OrdersByDate',
+  method: 'GET',
+  dataType: 'json',
+  success: function (OrdersByDates) {
+    // Process and use the data here
 
-     // Convert the aggregated data into an array of objects
-     const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrice]) => ({
-       date,
-       totalPrice,
-     }));
+    // Convert the aggregated data into an array of objects
+    const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrice]) => ({
+      date,
+      totalPrice,
+    }));
 
-     // Create D3.js graph using the extracted income data
-     createIncomeGraph(incomesByDate);
-   })
-   .catch(error => {
-     console.error('Error fetching orders data:', error);
-   });
+    // Create D3.js graph using the extracted income data
+    createIncomeGraph(incomesByDate);
+  },
+  error: function (error) {
+    console.error('Error fetching orders data:', error);
+  }
+});
 
 // Rest of the code remains the same...
 
@@ -70,3 +73,7 @@ svg.append('g')
 svg.append('g')
   .call(d3.axisLeft(yScale));
 }
+
+
+
+
