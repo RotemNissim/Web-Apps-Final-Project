@@ -31,6 +31,7 @@ router.get("/createAdminForm",requireAdminLogin('/admin'),createAdminForm);
 router.get("/manageAdminsForm",requireAdminLogin('/admin'),manageAdminsForm);
 
 router.route("/api/createDish").post(createDish);
+router.route("/api/createAdmin").post(createAdmin);
 router.route("/api/createRestaurant").post(createRestaurant);
 router.route("/api").post(createAdmin).get(getAdmins);
 router.route("/api/:id").delete(deleteAdmin);
