@@ -7,7 +7,7 @@ const session = require('express-session');
 
 const { router: dishRouter } = require('./routes/dishes');
 const  logoutRoute = require('./routes/logout');
-
+const userRoute = require('./routes/users');
 const env = process.env.NODE_ENV || "local";
 
 dotenv.config({ path: __dirname + `/config/.env.${env}` });
@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
  //routes
- 
+ app.use('/signUp', require('./routes/signUp'));
  app.use('/dishes', dishRouter);
  app.use('/about',require('./routes/about'));
  app.use('/admin',require('./routes/admin'));
@@ -49,6 +49,8 @@ app.use(express.json());
  app.use('/logout',logoutRoute);
  app.use('restaurants',require('./routes/restaurants'));
  app.use('/shoppingCart',require('./routes/shoppingCart'));
+ app.use('/users' ,userRoute);
+
 
  const http = require('http').Server(app);
 
