@@ -1,18 +1,23 @@
-<h1>Admin Sign-Up</h1>
-<div class ="form-horizontal">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Admin</title>
+  <link rel="stylesheet" href="\css\forms.css"> 
+</head>
+<body>
+  <div class="form-wrapper" id="create-admin-form">
+    <h1>Admin Sign-Up</h1>
     <div class="form-group">
-        <div class="col-md-3">
-            <label class="control-label col-md-2" for="text">Username</label>
-            <input type="text" class="form-control" id="username-field" placeholder="Username"/>
-        </div>
-        <div class="col-md-3">
-            <label class="control-label col-md-2" for="text">Password</label>
-            <input type="password" class="form-control" id="password-field" placeholder="Password"/>
-    
-</div>
-<div class="col-md-3">
-    <div class="control-label col-md-2">
-<button onclick="addAdmin()" class="btn btn-primary">Register</button>
-    </div>class="status-output"></div>
+      <label class="label" for="username-field">Username</label>
+      <input type="text" class="input" id="username-field" placeholder="Username"/>
     </div>
-</div>
+    <div class="form-group">
+      <label class="label" for="password-field">Password</label>
+      <input type="password" class="input" id="password-field" placeholder="Password"/>
+    </div>
+    <button onclick="addAdmin()" class="button">Register</button>
+  </div>
+</body>
+</html>

@@ -1,45 +1,65 @@
-<h1>Create dish</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Dish</title>
+  <link rel="stylesheet" href="/css/forms.css"> 
+</head>
+<body>
+  <div class="form-wrapper" id="create-dish-form">
+    <h1>Create Dish</h1>
     <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-3">
-                <label class="control-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="name">
-                <span class="help-block"></span>
-                <div id="name-error" class="help-block"></div>
-                <label class="control-label">Price</label>
-                <input type="text" class="form-control" id="price" placeholder="price">
-                <span class="help-block"></span>
-                <div id="price-error" class="help-block"></div>
-                <label class="control-label">Description</label>
-                <input type="text" class="form-control" id="description" placeholder="description">
-                <span class="help-block"></span>
-                <div id="description-error" class="help-block"></div>
-                <label class="control-label">Allergenics</label>
-                <input type="text" class="form-control" id="allergenics" placeholder="allergenics">
-                <span class="help-block"></span>
-                <div id="allergenics-error" class="help-block"></div>
-                <label class="control-label">Chef</label>
-                <input type="text" class="form-control" id="chef" placeholder="chef">
-                <span class="help-block"></span>
-                <div id="chef-error" class="help-block"></div>
-                <label class="control-label">Tags</label>
-                <input type="text" class="form-control" id="tags" placeholder="tags">
-                <span class="help-block"></span>
-                <div id="tags-error" class="help-block"></div>
-                <label class="control-label">Type</label>
-                <input type="text" class="form-control" id="type" placeholder="type">
-                <span class="help-block"></span>
-            </div>
-                <label class="imgUrl">Image URL:</label>
-                <input type="text" class="form-control" id="imgUrl" placeholder="type">
-                <span class="help-block"></span>
-            </div>
+      <div class="form-group">
+        <label class="label" for="name">Name</label>
+        <input type="text" class="input" id="name" placeholder="Name">
+        <span class="help-block"></span>
+        <div id="name-error" class="help-block"></div>
+        
+        <label class="label" for="price">Price</label>
+        <input type="text" class="input" id="price" placeholder="Price">
+        <span class="help-block"></span>
+        <div id="price-error" class="help-block"></div>
+        
+        <label class="label" for="description">Description</label>
+        <input type="text" class="input" id="description" placeholder="Description">
+        <span class="help-block"></span>
+        <div id="description-error" class="help-block"></div>
+        
+        <label class="label" for="allergenics">Allergenics</label>
+        <input type="text" class="input" id="allergenics" placeholder="Allergenics">
+        <span class="help-block"></span>
+        <div id="allergenics-error" class="help-block"></div>
+        
+        <label class="label" for="chef">Chef</label>
+        <input type="text" class="input" id="chef" placeholder="Chef">
+        <span class="help-block"></span>
+        <div id="chef-error" class="help-block"></div>
+        
+        <label class="label" for="tags">Tags</label>
+        <input type="text" class="input" id="tags" placeholder="Tags">
+        <span class="help-block"></span>
+        <div id="tags-error" class="help-block"></div>
+        
+        <label class="label" for="type">Type</label>
+        <input type="text" class="input" id="type" placeholder="Type">
+        <span class="help-block"></span>
+        <div id="type-error" class="help-block"></div>
+        
+        <label class="label" for="imgUrl">Image URL</label>
+        <input type="text" class="input" id="imgUrl" placeholder="Image URL">
+        <span class="help-block"></span>
+        <div id="imgUrl-error" class="help-block"></div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+          <button onclick="createDish()" class="button">Create</button>
         </div>
-        <div class="form-group">
-            <div class="col-md-offset-3 col-md-9">
-                <button onclick="createDish()" class="btn btn-default">Create</button>
-            </div>
-        </div>
+      </div>
     </div>
-
-<script src="/js/dishes.js"></script>
+  </div>
+  
+  <script src="/js/dishes.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>
