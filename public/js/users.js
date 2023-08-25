@@ -20,17 +20,18 @@ function createUser() {
     console.log("Sending data:", newUser);
     $.ajax({
       type: 'POST',
-      url: '/users/api/createUser', // Route to handle the user creation on the server side
+      url: '/users/signup', // Route to handle the user creation on the server side
       data: JSON.stringify(newUser),
       contentType: 'application/json', // Set the content type to JSON
       dataType: 'json', //
       success: function(data) {
         // Handle the response here (e.g., show success message)
         console.log('User created successfully', data);
+        window.location.href = '/users/' + data.id;
       },
       error: function(error) {
         // Handle the error here (e.g., show error message)
-        console.error('Error creating User:', error);
+        console.error('Error creating User:', error.responseJSON);
       }
     });
   }
