@@ -5,6 +5,7 @@ exports.logout = (req, res) => {
         return res.status(500).json({ message: 'Logout failed' });
       }
       res.status(200).json({ message: 'Logout successful' });
+      console.log('Logged out');
     });
   };
   
