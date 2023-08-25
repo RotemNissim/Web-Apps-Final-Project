@@ -37,16 +37,25 @@ const getAllOrders = async (options = {}) => {
 };
 
 const getOrdersByDate = async () => {
-    const ordersByDates = await Order.aggregate([
-        {
-            $group: {
-                _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
-                totalRevenue: { $sum: '$totalPrice' },
+    console.log("Fetching orders by date...");
+    try {
+        const ordersByDates = await Order.aggregate([
+            {
+                $group: {
+                    _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
+                    totalRevenue: { $sum: '$dishes.price' }, // Sum of prices in the dishes array
+                },
             },
-        },
-    ]);
-    return ordersByDates;
+        ]);
+        console.log("Aggregation result:", ordersByDates);
+        return ordersByDates;
+    } catch (error) {
+        console.error("Error fetching orders by date:", error);
+        throw error;
+    }
 };
+
+
 
 module.exports = {
     createOrder,

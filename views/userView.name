@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User View</title>
-  <!-- Your CSS and other head content -->
-
+  <link rel="stylesheet" href="/css/user.css"> <!-- Include the user CSS file -->
 </head>
 <body>
   <!-- Your HTML content for the user view -->
-  <h1>Welcome to User View</h1>
-  <!-- ... Other content specific to the user view -->
+  <div class="user-container">
+    <h1 class="user-heading">Welcome to User View</h1>
+    <!-- ... Other content specific to the user view -->
+    <a class="user-button" href="#">User Button</a>
+  </div>
 
   <!-- Include the Socket.io library -->
   <script src="/socket.io/socket.io.js"></script>
@@ -29,4 +31,3 @@
   </script>
 </body>
 </html>
-

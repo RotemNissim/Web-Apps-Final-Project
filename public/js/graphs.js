@@ -1,13 +1,15 @@
 // Fetch orders data from backend
+
+
 fetch('/Orders/api/OrdersByDate')
    .then(response => response.json())
-   .then(ordersByDate => {
+   .then(OrdersByDates => {
      // Process and use the data here
 
      // Convert the aggregated data into an array of objects
-     const incomesByDate = Object.entries(ordersByDate).map(([date, totalRevenue]) => ({
+     const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrice]) => ({
        date,
-       totalRevenue,
+       totalPrice,
      }));
 
      // Create D3.js graph using the extracted income data
@@ -21,13 +23,15 @@ fetch('/Orders/api/OrdersByDate')
 
 // Create income graph using D3.js
 function createIncomeGraph(incomesByDate) {
+  console.log(incomesByDate); // Check the received data in the console
+
   // Your D3.js graph creation code goes here
   // ...
 
   // This is just a basic example, you need to customize it for your needs
   const graphContainer = document.querySelector('.income-graph');
-  const width = 800;
-  const height = 400;
+  const width = 500;
+  const height = 500;
   
 
 // Create an SVG element within the container
