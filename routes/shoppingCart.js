@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.route('/shoppingCart').get((req, res) => {
+router.route('/').get((req, res) => {
   // Render the shoppingCart.ejs view
-  res.render('../views/shoppingCart.ejs');
+  const cartData = req.query.cart ? JSON.parse(req.query.cart) : [];
+  res.render('../views/shoppingCart.ejs', { cart : cartData });
 });
 
 module.exports = router;

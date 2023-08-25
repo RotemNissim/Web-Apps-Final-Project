@@ -3,19 +3,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/css/shoppingCart.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
 </head>
 <body>
+    <button type="button" class="btn-back" href="/dishes">Back to dishes</button>
     <h1>Shopping Cart</h1>
     <div id="cart-container">
         <% cart.forEach(product => { %>
             <div class="product">
                 <p><%= product.name %></p>
+                <p><%=product.Price%></p>
             </div>
         <% }); %>
     </div>
     <script src="/js/shoppingCart.js"></script>
+    <script src="/js/common.js"></script>
 </body>
 </html>
