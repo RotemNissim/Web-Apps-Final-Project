@@ -33,6 +33,7 @@ const login = async (req, res) => {
         return res.redirect('/admin');
     } else {
         req.session.userId = user._id;
+        req.session.username = username;
         return res.redirect('/users/'+ user._id);
     }
 };

@@ -11,7 +11,7 @@ const createOrder = (user,dishes,date,totalPrice,email,TA,delivery) => {
     order.totalPrice=dishPricesSum;
     order.TA=TA;
     order.delivery=delivery
-    return order.save();
+    return Order.save();
 };
 
 
@@ -26,7 +26,7 @@ const deleteOrder = async (id) => {
         return null;
     }
 
-    await order.remove();
+    await Order.remove();
     return order;
 };
 const updateOrder = async (id, orderDetails) => {
