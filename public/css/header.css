@@ -1,4 +1,13 @@
 /* header.css */
+@font-face {
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+}
+
 header {
     display: flex;
     align-items: center;
@@ -7,6 +16,7 @@ header {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     margin-right: auto;
     margin-left: auto;
+    font-family: 'Poppins-GoogleFonts';
   }
   
   .logo {

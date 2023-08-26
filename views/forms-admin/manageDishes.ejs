@@ -1,7 +1,11 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/admin.js"></script>
+</head>
+
 <table id = "dishes-tbl">
     <thead>
         <tr>
-            <th>Restaurant</th>
             <th>Name</th>
             <th>Price</th>
             <th>Description</th>
@@ -9,7 +13,27 @@
             <th>Chef</th>
             <th>Tags</th>
             <th>Type</th>
-            <th>Control</th>
         </tr>
     </thead>
+    <tbody>
+        <% for(let i = 0; i < dishes.length; i ++){ %>
+        <tr>
+            <td><%= dishes[i].name %></td>
+            <td><%= dishes[i].Price %></td>
+            <td><%= dishes[i].description %></td>
+            <td>
+                <% for(let j = 0; j < dishes[i].allergenics.length; j ++) { %>
+                    <%= dishes[i].allergenics[j] %><br />
+                <% } %>
+            </td>
+            <td><%= dishes[i].chef %></td>
+            <td>
+                <% for(let j = 0; j < dishes[i].tags.length; j ++) { %>
+                    <%= dishes[i].tags[j] %><br />
+                <% } %>
+            </td>
+            <td><%= dishes[i].type %></td>
+        </tr>
+        <% } %>
+    </tbody>
 </table>

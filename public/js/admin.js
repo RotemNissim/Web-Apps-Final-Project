@@ -7,7 +7,7 @@ function createAdmin() {
     password: password
   };
 
-  console.log(newAdmin);
+  (newAdmin);
 
   $.ajax({
     type: 'POST',
@@ -16,10 +16,26 @@ function createAdmin() {
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
-      console.log('admin created successfully', newAdmin);
+      ('admin created successfully', newAdmin);
     },
     error: function(error) {
       console.error('error creating admin', error);
     }
+  });
+}
+function deleteDish(id) {
+  $.ajax({
+      url: '/admin/api/deleteDish',
+      method: "DELETE",
+      data: { id },
+      followRedirects: true,
+      xhrFields: { withCredentials: true },
+      success: function (data, textStatus, jqXHR) {
+        alert("Dish Removed!");
+        location.reload();
+      },
+      error: function () {
+        alert("Uable to delete this dish!");
+      },
   });
 }

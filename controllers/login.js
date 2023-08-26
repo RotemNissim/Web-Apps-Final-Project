@@ -20,7 +20,7 @@ const login = async (req, res) => {
         user = await userService.getUserByUserName(username);
     }
     if (!user) {
-        return res.status(404).json({errors: ['invalid username / password']});
+        return res.status(404).render('../views/login.ejs',{errors: ['invalid username / password'], username: req.body.username });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -33,13 +33,14 @@ const login = async (req, res) => {
         return res.redirect('/admin');
     } else {
         req.session.userId = user._id;
+        req.session.username = username;
         return res.redirect('/users/'+ user._id);
     }
 };
 
-    // console.log(admin);
+    // (admin);
     // if (!admin) {
-    //     console.log('not found');
+    //     ('not found');
     //     return res.status(404).json({errors: ['invalid username or password']});
     // }
     // const isMatch = await bcrypt.compare(password, admin.password);
@@ -47,7 +48,7 @@ const login = async (req, res) => {
     //     return res.render('../views/login.ejs', {errors: ['invalid username or password'], username: admin.username});
     //         // return res.status(404).json({errors: ['invalid username or password']});
     // }
-    // console.log('login success');
+    // ('login success');
     // req.session.adminId = admin._id;
     // return res.redirect('/admin');
     // // return res.status(200).json({messsge: 'login success'});

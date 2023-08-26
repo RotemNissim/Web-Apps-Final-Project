@@ -11,7 +11,7 @@ const createOrder = (user,dishes,date,totalPrice,email,TA,delivery) => {
     order.totalPrice=dishPricesSum;
     order.TA=TA;
     order.delivery=delivery
-    return order.save();
+    return Order.save();
 };
 
 
@@ -26,7 +26,7 @@ const deleteOrder = async (id) => {
         return null;
     }
 
-    await order.remove();
+    await Order.remove();
     return order;
 };
 const updateOrder = async (id, orderDetails) => {
@@ -44,7 +44,7 @@ const getAllOrders = async (options = {}) => {
 };
 
 const getOrdersByDate = async () => {
-    console.log("Fetching orders by date...");
+    ("Fetching orders by date...");
     try {
         const ordersByDates = await 
         Order.aggregate([
@@ -55,7 +55,7 @@ const getOrdersByDate = async () => {
                 },
             },
         ]);
-        console.log("Aggregation result:", ordersByDates);
+        ("Aggregation result:", ordersByDates);
         return ordersByDates;
     } catch (error) {
         console.error("Error fetching orders by date:", error);

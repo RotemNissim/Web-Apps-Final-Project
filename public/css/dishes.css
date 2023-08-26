@@ -17,14 +17,6 @@ body {
   padding: 0;
 }
 
-/* Header styles */
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
 /* Dishes section styles */
 .dishes {
   background-color: #f9f9f9;
@@ -80,7 +72,7 @@ h2 {
 }
 
 .dish-img {
-  max-width: 100%;
+  width: 100%;
   max-height: 22vh; 
   margin-bottom: 10px;
 }

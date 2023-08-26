@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const autopopulate = require('mongoose-autopopulate');
 
 const reviewSchema = new mongoose.Schema({
   dish: {
@@ -21,6 +22,16 @@ const reviewSchema = new mongoose.Schema({
   },
 });
 
-const Review = mongoose.model('Review', reviewSchema);
+// reviewSchema.virtual('writerUsername',{
+//   ref: 'User',
+//   localField: 'writer',
+//   foreignField: '_id',
+//   justOne: true,
+//   autopopulate: true,
+// });
+
+// reviewSchema.plugin(autopopulate);
+
+const Review = mongoose.model('Review', reviewSchema, "Reviews");
 
 module.exports = Review;

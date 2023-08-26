@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${product.imgUrl}" alt="${product.name}">
             <h2>${product.name}</h2>
           </a>
-            <span>Price: ${product.Price}₪</span>
+            <span>Price:&nbsp;&nbsp;₪&nbsp;${product.Price}</span>
+            <span>Restaurant:&nbsp;&nbsp;${product.restaurant.name}</span>
         
           `;
           carouselContainer.appendChild(productElement);
