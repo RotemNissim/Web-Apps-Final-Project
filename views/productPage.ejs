@@ -22,8 +22,25 @@
       <p>Restaurant: <%= product.restaurant.name %></p>
       <button id="addToCartBtn" data-name="<%= product.name %>" data-price="<%=product.Price %>">Add to cart</button>
       <!-- Add more product information as needed -->      
+    
     </section>
   </main>
+
+
+
+  
+  <div class="reviews">
+    <h2>Reviews</h2>
+    
+    <!-- Display reviews -->
+    <% for (let i = 0; i < revs.length; i++) { %>
+      <div class="review">
+              <p>Review: <%= revs[i].text %></p>
+        <p>Rate: <%= revs[i].rate %></p>
+      </div>
+    <% } %>
+  </div>
+  
 
   
   <!-- Add the Google Maps iframe section here -->
