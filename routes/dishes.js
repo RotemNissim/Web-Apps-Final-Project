@@ -27,7 +27,7 @@ router.route('/productPage').get(async (req, res) => {
   try {
     const productId = req.query.id;
     const dish = await Dish.findById(productId); // Use the correct model name and method
-    res.render('/productPage', { product: dish }); // Use the correct variable name
+    res.render('productPage', { product: dish }); // Use the correct variable name
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
