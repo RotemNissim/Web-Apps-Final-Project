@@ -1,5 +1,5 @@
 const requireAdminLogin = (pathToRedirect = '/admin') => (req, res, next) => {
-    if (!req.session.adminId) {
+    if (!req.session.adminId || !req.session.userId) {
         return res.redirect("/login?pathToRedirect=" + pathToRedirect);
     }
     next();
@@ -8,6 +8,9 @@ const requireAdminLogin = (pathToRedirect = '/admin') => (req, res, next) => {
 const redirectIfAuthenticated = (req, res, next) => {
     if (req.session.adminId) {
         return res.redirect("/admin");
+    } else if (req.session.userId) {
+        console.log('UserID in session:', req.session.userId);
+        return res.redirect("/users/${userId}");
     }
     next();
 };

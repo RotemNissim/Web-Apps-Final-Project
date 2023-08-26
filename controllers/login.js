@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 
 const adminService = require('../services/admin');
+const userService = require('../services/users');
 
 const index = (req, res) => {
     res.render('../views/login.ejs', {errors: [], username: ''});
@@ -8,23 +9,49 @@ const index = (req, res) => {
 
 const login = async (req, res) => {
     const { username, password } = req.body;
-    const admin = await adminService.getAdmin(username);
+    let user;
+    let isAdmin = false;
 
-    console.log(admin);
-    if (!admin) {
-        console.log('not found');
-        return res.status(404).json({errors: ['invalid username or password']});
+    const admin = await adminService.getAdmin(username);
+    if (admin) {
+        user = admin;
+        isAdmin = true;
+    } else {
+        user = await userService.getUserByUserName(username);
     }
-    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!user) {
+        return res.status(404).json({errors: ['invalid username / password']});
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-        return res.render('../views/login.ejs', {errors: ['invalid username or password'], username: admin.username});
-            // return res.status(404).json({errors: ['invalid username or password']});
+        return res.render('../views/login.ejs',{errors: ['invalid username / password']});
     }
-    console.log('login success');
-    req.session.adminId = admin._id;
-    return res.redirect('/admin');
-    // return res.status(200).json({messsge: 'login success'});
+
+    if (isAdmin) {
+        req.session.adminId = user._id;
+        return res.redirect('/admin');
+    } else {
+        req.session.userId = user._id;
+        return res.redirect('/users/'+ user._id);
+    }
 };
+
+    // console.log(admin);
+    // if (!admin) {
+    //     console.log('not found');
+    //     return res.status(404).json({errors: ['invalid username or password']});
+    // }
+    // const isMatch = await bcrypt.compare(password, admin.password);
+    // if (!isMatch) {
+    //     return res.render('../views/login.ejs', {errors: ['invalid username or password'], username: admin.username});
+    //         // return res.status(404).json({errors: ['invalid username or password']});
+    // }
+    // console.log('login success');
+    // req.session.adminId = admin._id;
+    // return res.redirect('/admin');
+    // // return res.status(200).json({messsge: 'login success'});
+
 
 module.exports = {
     index,
