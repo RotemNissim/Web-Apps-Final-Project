@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
+  Price: {
     type: Number,
     required: true,
     min: 0, // Price cannot be negative
@@ -32,6 +32,6 @@ const productSchema = new mongoose.Schema({
   },
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema, "Product");
 
 module.exports = Product;

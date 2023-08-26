@@ -36,10 +36,12 @@ $(document).ready(() => {
           if (jqXHR.status == 200) {
             jqXHR.responseJSON.forEach((item) => {
               data = {
+                Iid: item._id,
                 name: item.name,
                 Price: item.Price,
-                chef: item.description,
-                imgUrl: item.imgUrl
+                description: item.description,
+                imgUrl: item.imgUrl,
+                restaurant: item.restaurant.name,
               }
               response.push(data);
             });
@@ -48,11 +50,15 @@ $(document).ready(() => {
               dishes += '<div style="width: 100%; font-size: 2em">No Dishes Found!</div>';
             }
             for (let i = 0; i < response.length; i++) {
-              dishes += `<div class="dish">
-                  <img class="dish-img" src="${response[i].imgUrl}"/>
-                  <h2>${response[i].name}</h2>
-                  <p>${response[i].description}</p>
-                  <p>${response[i].Price}</p>
+              dishes += 
+              `<div class="dish">
+                  <a href="/dishes/productPage?id=${response[i].Iid}">
+                    <img class="dish-img" src="${response[i].imgUrl}"/>
+                    <h2>${response[i].name}</h2>
+                  </a>
+                  <p>Description:&nbsp;&nbsp;${response[i].description}</p>
+                  <p>Price:&nbsp;&nbsp;₪&nbsp;${response[i].Price}</p>
+                  <p>Restaurant:&nbsp;&nbsp;${response[i].restaurant}</p>
                   <!-- Add more details or formatting as needed -->
               </div>`;
             }
@@ -75,7 +81,7 @@ $(document).ready(() => {
 
 function createDish() {
   const name = $('#name').val();
-  const price = $('#Price').val();
+  const Price = $('#Price').val();
   const chef = $('#chef').val();
   const tags = $('#tags').val();
   const type = $('#type').val();
@@ -86,7 +92,7 @@ function createDish() {
 
   const newDish = {
     name: name,
-    Price: price,
+    Price: Price,
     chef: chef,
     tags: tags,
     type: type,
@@ -113,6 +119,3 @@ function createDish() {
     }
   });
 }
-
-
-

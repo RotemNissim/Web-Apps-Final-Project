@@ -33,7 +33,7 @@ body {
 .carousel {
   position: relative;
   overflow: visible;
-  max-width: 80%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ body {
   align-items: center;
 }
 
-/* Styling for the product name and price */
+/* Styling for the product name and Price */
 .product h2, .product span {
   margin-top: 10px;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 /* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+@media (width: 768px) {
   .carousel {
     height: auto; /* Adjust as needed */
   }

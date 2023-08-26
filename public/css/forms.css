@@ -1,0 +1,61 @@
+/* Form Styles*/
+
+@font-face {
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+}
+
+
+.form-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    font-family: 'Poppins-GoogleFonts';
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family:'Poppins-GoogleFonts' ;
+  }
+  
+  .input {
+    width: 70%;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  /* CreateAdmin Form */
+  #create-admin-form {
+    text-align: center;
+  }
+  
+  /* Other Form Styles (e.g., CreateRestaurant, CreateDish, etc.) */
+  /* Add your specific styles for each form here */
+  
