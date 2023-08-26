@@ -9,6 +9,37 @@ const createUser = async ({username, password, firstName, lastName, userTaz}) =>
     return user;
 };
 
+const getUser = async (userId) => {
+try {
+    const user = await User.findById(userId);
+    if (!user) {
+        throw new Error('User not found');
+    }
+    return user;
+} catch(error) {
+    throw error;
+}
+};
+
+getUserByUserName = async (username) => {
+    try {
+        const user = await User.findOne( {username} );
+        if (!user) {
+            throw new Error('User not found');
+        }
+        return user;
+    } catch(error) {
+        throw error;
+    }
+    };
+
+
+
+
+
 module.exports = {
-    createUser
+    createUser,
+    getUser,
+    getUserByUserName,
+    
 };

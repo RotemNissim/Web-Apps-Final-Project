@@ -32,7 +32,8 @@ const handleLogin = () => {
     $.ajax({
       url: "/login",
       method: "POST",
-      data: { username, password },
+      data:JSON.stringify( { username, password }),
+      contentType: "application/json",
       followRedirects: true,
       xhrFields: { withCredentials: true },
       success: function (data, textStatus, jqXHR) {

@@ -5,7 +5,8 @@ const logout = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    return res.json({ message: 'Logout successful' }); // Return a JSON response
+    // return res.json({ message: 'Logout successful' }); // Return a JSON response
+    return res.redirect('/index.html');
   });
 };
 

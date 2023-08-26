@@ -11,6 +11,19 @@ const createUser = async (req, res) => {
     }
 };
 
+
+
+const getUserArea = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const user = await userServices.getUser(userId);
+        res.render('../views/userView.ejs', { user: user });
+    } catch (error) {
+        res.status(400).send(error);
+    }
+};
+
 module.exports = {
-    createUser
+    createUser,
+    getUserArea
 };

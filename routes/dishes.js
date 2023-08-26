@@ -1,4 +1,5 @@
 const express = require('express');
+const Dish = require('../models/Dishes');
 
 const {
     index,
@@ -7,11 +8,12 @@ const {
     getDishesByType,
     getDish,
     editDish,
-    deleteDish
+    deleteDish,
+    searchDishes
 } = require('../controllers/dishController');
 
 const router = express.Router();
-router.route('/').get(index);
+router.route('/').get(index).post(searchDishes);
 
 router.route('/api').post(createDish).get(getDishes);
 
@@ -22,16 +24,16 @@ router
 .put(editDish);
 
 router.route('/api/type/:type').get(getDishesByType);
+router.route('/productPage').get(async (req, res) => {
+  try {
+    const productId = req.query.id;
+    const dish = await Dish.findById(productId); // Use the correct model name and method
+    res.render('productPage', { product: dish }); // Use the correct variable name
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
-router.get('/productPage', async (req, res) => {
-    try {
-      const productId = req.query.id;
-      const product = await Product.findById(productId); // Replace with your database query
-      res.render('product', { product });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
 
 module.exports.router = router;
