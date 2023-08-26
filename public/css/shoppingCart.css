@@ -1,7 +1,15 @@
 /* styles.css */
+@font-face {
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins-GoogleFonts', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;

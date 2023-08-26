@@ -1,4 +1,12 @@
 /* public/css/admin.css */
+@font-face {
+  font-family: 'Poppins-GoogleFonts';
+  src: url('../assets/fonts/Poppins-Black.woff') format('woff'),
+       url('../assets/fonts/Poppins-BlackItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-Bold.woff') format('woff'),
+       url('../assets/fonts/Poppins-BoldItalic.woff') format('woff'),
+       url('../assets/fonts/Poppins-ExtraLight.woff') format('woff');
+}
 
 /* Style for admin buttons */
 .admin-button {
@@ -10,6 +18,7 @@
     text-decoration: none;
     border: none;
     border-radius: 5px;
+  font-family: 'Poppins-GoogleFonts';
     font-size: 16px;
     transition: background-color 0.3s;
   }
