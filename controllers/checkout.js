@@ -8,15 +8,15 @@ const getCheckoutPage = (req, res) => {
   res.render('checkout', { cart: req.session.cart, totalPrice: req.session.totalPrice });
 };
 
-const placeOrder = async (req, res) => {
+const createOrder = async (req, res) => {
   try {
     const { userId, cart, totalPrice, email, TA, delivery } = req.body;
 
     // Create a new order record in the database
     const order = new Order({
-      user: userId,
-      dishes: cart,
-      totalPrice: totalPrice,
+      user: req.session.user._id,
+      dishes: req.session.cart,
+      totalPrice: req.session.totalPrice,
       email: email,
       TA: TA,
       delivery: delivery,
@@ -37,5 +37,5 @@ const placeOrder = async (req, res) => {
 
 module.exports = {
   getCheckoutPage,
-  placeOrder,
+  createOrder,
 };

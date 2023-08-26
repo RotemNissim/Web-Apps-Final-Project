@@ -1,27 +1,38 @@
+<!-- checkout.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ... Your head content -->
-  <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
 </head>
 <body>
-  <header></header>
-
-  <section class="checkout">
-    <h1>Checkout</h1>
-    <form id="checkoutForm">
-      <label for="address">Delivery Address:</label>
-      <input type="text" id="address" name="address" required>
-      <!-- Additional fields for payment, date, and time selection can be added here -->
-      <button type="submit">Place Order</button>
-    </form>
-  </section>
-
-  <footer></footer>
-
-  <script src="/public/common.js"></script>
-  <script src="/public/checkout.js"></script>
+  <h1>Checkout</h1>
+  <form id="checkoutForm">
+    <!-- User ID (Hidden Field) -->
+    <input type="hidden" id="user" name="userId" value="<%= user._id %>">
+    
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <!-- Total Price (Hidden Field) -->
+    <input type="hidden" id="totalPrice" name="totalPrice" value="<%= totalPrice %>">
+    
+    <!-- Takeaway Option -->
+    <label for="TA">Takeaway:</label>
+    <input type="checkbox" id="TA" name="TA">
+    
+    <!-- Delivery Option -->
+    <label for="delivery">Delivery:</label>
+    <input type="checkbox" id="delivery" name="delivery">
+    
+    <!-- Submit Button -->
+    <button onclick="createOrder()" class="button">Place Order</button>
+  </form>
+  
+  <script src="/js/checkout.js"></script>
 </body>
 </html>
