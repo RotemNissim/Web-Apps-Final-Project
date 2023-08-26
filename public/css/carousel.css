@@ -61,7 +61,7 @@ body {
   align-items: center;
 }
 
-/* Styling for the product name and price */
+/* Styling for the product name and Price */
 .product h2, .product span {
   margin-top: 10px;
 }

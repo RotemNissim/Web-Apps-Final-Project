@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= product.name %></title>
   <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
-
  </head>
  <body>
    <header>
@@ -24,14 +23,15 @@
      </section>
     </main>  
   <!-- Add the Google Maps iframe section here -->
+  <h2>Location</h2>
   <section class="google-map">
-    <h2>Location</h2>
   
     <iframe
-    width="60%"
+    width="65%"
     height="300"
     frameborder="0"
     style="border: 0"
+    
     
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBGeMncrsBMb9ZS38FeHFW3e_j6ohy05o4&q=<%= encodeURIComponent(product.restaurant.address) %>">
   </iframe>

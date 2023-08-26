@@ -75,7 +75,7 @@ $(document).ready(() => {
 
 function createDish() {
   const name = $('#name').val();
-  const price = $('#Price').val();
+  const Price = $('#Price').val();
   const chef = $('#chef').val();
   const tags = $('#tags').val();
   const type = $('#type').val();
@@ -86,7 +86,7 @@ function createDish() {
 
   const newDish = {
     name: name,
-    Price: price,
+    Price: Price,
     chef: chef,
     tags: tags,
     type: type,
@@ -113,6 +113,3 @@ function createDish() {
     }
   });
 }
-
-
-

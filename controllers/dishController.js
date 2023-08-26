@@ -4,7 +4,7 @@ const dishesService = require("../services/dishes");
 const index = async (req, res) => {
   const dishes = await dishesService.getDishes();
   console.log(dishes)
-  //const dishes = [{name: 'test', price: 3}]
+  //const dishes = [{name: 'test', Price: 3}]
   res.render("../views/dishes", { dishes });
 };
 
