@@ -5,3 +5,5 @@ const router = express.Router();
 
 router.get('/', checkoutController.getCheckoutPage);
 router.post('/place-order', checkoutController.placeOrder);
+
+module.exports = router;
