@@ -8,11 +8,12 @@ const {
     getDishesByType,
     getDish,
     editDish,
-    deleteDish
+    deleteDish,
+    searchDishes
 } = require('../controllers/dishController');
 
 const router = express.Router();
-router.route('/').get(index);
+router.route('/').get(index).post(searchDishes);
 
 router.route('/api').post(createDish).get(getDishes);
 
@@ -35,4 +36,4 @@ router.route('/productPage').get(async (req, res) => {
 });
 
 
-module.exports = {router};
+module.exports.router = router;

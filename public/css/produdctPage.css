@@ -1,69 +1,67 @@
-/* assets/css/product.css */
-
 /* Reset default margin and padding */
+
 body, h1, h2, p {
     margin: 0;
     padding: 0;
-  }
-  
-  /* Set a background color and font */
-  body {
+    text-align:center;  
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+/* Set a background color and font */
+body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-  }
-  
-  /* Give the main section some spacing */
-  main {
+}
+
+/* Give the main section some spacing */
+main {
     margin: 20px;
-  }
-  
-  /* Style the product details section */
-  .product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Style the product details section */
+.product-details {
+    max-width: 70%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the product image */
-  .product-details img {
+    margin: 10px;
+}
+
+/* Style the product image */
+.product-details img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-bottom: 10px;
-  }
-  
-  /* Style the add to cart button */
-  #addToCartBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Style the add to cart button */
+#addToCartBtn {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  #addToCartBtn:hover {
+}
+
+#addToCartBtn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Style the Google Maps section */
-  .google-map {
+}
+
+/* Style the Google Maps section */
+.google-map {
+    width: 100%;
     margin-top: 20px;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    header, main, footer {
-      height: auto;
-    }
-    
-    .product-details {
-      margin: 10px;
-    }
-    
-    .google-map iframe {
-      height: 200px;
-    }
-  }
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

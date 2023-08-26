@@ -14,9 +14,16 @@
 
     <section class="dishes">
         <h1>Your Delicious Dishes</h1>
-        <h2>Max Price:</h2>
-        <input type="number" id="max-price"/>
-        <button id="search-button">Search</button>
+        <h2>Search By Dishes:</h2>
+<input type="text" id="search-term" placeholder="Enter search term">
+
+        <h2>Search by Price Range:</h2>
+<input type="number" id="min-price" placeholder="Min Price">
+<input type="number" id="max-price" placeholder="Max Price">
+<br />
+<br />
+<button id="search-button">Search</button>
+<div id="errors" style="color: red; background: rgb(255, 255, 189); border: 1px solid black; border-radius: 25px; margin: 10px"></div>
         <div class="dishes-list">
             <% dishes.forEach(dish => { %>
                 <div class="dish">
