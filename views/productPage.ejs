@@ -20,6 +20,7 @@
       <p><%= product.description %></p>
       <p>Price: <%= product.Price %> ₪</p>
       <p>Restaurant: <%= product.restaurant.name %></p>
+      <button id="addToCartBtn" data-name="<%= product.name %>" data-price="<%=product.Price %>">Add to cart</button>
       <!-- Add more product information as needed -->      
     
     </section>

@@ -10,28 +10,12 @@ const createUser = async ({username, password, firstName, lastName, userTaz}) =>
 };
 
 const getUser = async (userId) => {
-try {
-    const user = await User.findById(userId);
-    if (!user) {
-        throw new Error('User not found');
-    }
-    return user;
-} catch(error) {
-    throw error;
-}
+    return await User.findById(userId);
 };
 
 getUserByUserName = async (username) => {
-    try {
-        const user = await User.findOne( {username} );
-        if (!user) {
-            throw new Error('User not found');
-        }
-        return user;
-    } catch(error) {
-        throw error;
-    }
-    };
+    return user = await User.findOne( {username} );
+};
 
 
 
@@ -40,6 +24,5 @@ getUserByUserName = async (username) => {
 module.exports = {
     createUser,
     getUser,
-    getUserByUserName,
-    
+    getUserByUserName
 };

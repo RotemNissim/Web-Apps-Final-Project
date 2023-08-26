@@ -20,7 +20,7 @@ const login = async (req, res) => {
         user = await userService.getUserByUserName(username);
     }
     if (!user) {
-        return res.status(404).json({errors: ['invalid username / password']});
+        return res.status(404).render('../views/login.ejs',{errors: ['invalid username / password'], username: req.body.username });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -33,6 +33,7 @@ const login = async (req, res) => {
         return res.redirect('/admin');
     } else {
         req.session.userId = user._id;
+        req.session.username = username;
         return res.redirect('/users/'+ user._id);
     }
 };
