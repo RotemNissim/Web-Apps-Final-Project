@@ -5,7 +5,7 @@ const getCheckoutPage = (req, res) => {
   // Render your checkout page here
   // You might want to fetch the user's cart details and display them on the checkout page
   // Also, display the total cart price
-  res.render('checkout', { cart: req.session.cart, totalPrice: req.session.totalPrice });
+  res.render('checkout', { cart: req.session.cart, totalPrice: req.session.totalPrice,user: req.session.user});
 };
 
 const createOrder = async (req, res) => {
