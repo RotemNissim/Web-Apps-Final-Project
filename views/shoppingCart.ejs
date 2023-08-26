@@ -9,7 +9,8 @@
     <title>Shopping Cart</title>
 </head>
 <body>
-    <button type="button" class="btn-back" href="/dishes">Back to dishes</button>
+    <button type="button" class="btn-back" href="/dishes.ejs">Back to dishes</button> 
+    <!-- need to wrap this in anchor link doesnt work -->
     <h1>Shopping Cart</h1>
     <div id="cart-container">
         <% cart.forEach(product => { %>
