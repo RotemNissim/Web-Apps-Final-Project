@@ -1,33 +1,48 @@
- <!-- views/product.ejs -->
+<!-- views/product.ejs -->
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title><%= product.name %></title>
-   <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
- 
- </head>
- <body>
-   <header>
-     <!-- Your header content here -->
-   </header>
-    <main>
-     <section class="product-details">
-       <h1><%= product.name %></h1>
-       <img src="<%= product.imgUrl %>" alt="<%= product.name %>">
-       <p><%= product.description %></p>
-       <p>Price: <%= product.Price %> ₪</p> <!-- Use lowercase 'price' here -->
-       <p>Category: <%= product.category %></p>
-       <!-- Add more product information as needed -->
-     </section>
-    </main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= product.name %></title>
+  <link rel="icon" type="image/png" href="/assets/images/takeout-bag.png">
+  <link rel="stylesheet" href="/css/produdctPage.css">
+</head>
+<body>
+  <header>
+    <!-- Your header content here -->
+  </header>
+  <main>
+    <section class="product-details">
+      <h1><%= product.name %></h1>
+      <img src="<%= product.imgUrl %>" alt="<%= product.name %>">
+      <p><%= product.description %></p>
+      <p>Price: <%= product.price %> ₪</p>
+      <p>Category: <%= product.category %></p>
+      <!-- Add more product information as needed -->      
+    </section>
+  </main>
+
   
-   <footer>
-     <!-- Your footer content here -->
-   </footer>
- </body>
- <script src="/js/common.js"></script>
- </html>
- 
+  <!-- Add the Google Maps iframe section here -->
+  <section class="google-map">
+    <h2>Location</h2>
+  
+    <iframe
+    width="60%"
+    height="300"
+    frameborder="0"
+    style="border: 0"
+    
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBGeMncrsBMb9ZS38FeHFW3e_j6ohy05o4&q=<%= encodeURIComponent(product.restaurant.address) %>">
+  </iframe>
+</section>
+
+<footer>
+  <!-- Your footer content here -->
+</footer>
+</body>
+<script src="/js/common.js"></script>
+<script src="/js/shoppingCart.js"></script>
+</html>
