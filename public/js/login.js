@@ -44,7 +44,7 @@ const handleLogin = () => {
         }
       },
       error: function (error) {
-        .renderError(error.responseJSON);
+        renderError(error.responseJSON);
       },
     });
   }
