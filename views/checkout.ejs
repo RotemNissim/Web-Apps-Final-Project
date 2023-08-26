@@ -11,6 +11,7 @@
 <body>
   <h1>Checkout</h1>
   <form id="checkoutForm">
+    <h2>Hi <%= user.username%></h2>
     <!-- User ID (Hidden Field) -->
     <input type="hidden" id="user" name="userId" value="<%= user._id %>">
     
@@ -19,7 +20,7 @@
     <input type="email" id="email" name="email" required>
     
     <!-- Total Price (Hidden Field) -->
-    <input type="hidden" id="totalPrice" name="totalPrice" value="<%= totalPrice %>">
+    <input type="hidden" id="total-Price" name="total-Price" value="<%= totalPrice %>">
     
     <!-- Takeaway Option -->
     <label for="TA">Takeaway:</label>
@@ -32,7 +33,7 @@
     <!-- Submit Button -->
     <button onclick="createOrder()" class="button">Place Order</button>
   </form>
-  
+  <div id="totalPrice" value="<%= totalPrice%>"> Sum: <%= encodeURIComponent(totalPrice) %></div>
   <script src="/js/checkout.js"></script>
 </body>
 </html>

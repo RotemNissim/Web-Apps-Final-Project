@@ -11,7 +11,7 @@ const redirectIfAuthenticated = (req, res, next) => {
         return res.redirect("/admin");
     } else if (req.session.userId) {
         console.log('UserID in session:', req.session.userId);
-        return res.redirect("/users/${userId}");
+        return res.redirect("/users/" + req.session.userId);
     }
     next();
 };
