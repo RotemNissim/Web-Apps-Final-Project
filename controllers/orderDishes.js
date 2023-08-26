@@ -1,4 +1,4 @@
-const orderService = require('./services/order');
+const orderService = require('../services/orders');
 
 const index = (req, res) => {
  res.render('../views/orderDishes.ejs');
@@ -15,7 +15,7 @@ const order = await orderService.deleteOrder(req.params.id);
 };
 
 const getOrders = async (req, res) => {
-    const orders = await orderService.getOrders();
+    const orders = await orderService.getAllOrders();
     res.json(orders);
 };
 

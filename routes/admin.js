@@ -36,4 +36,4 @@ router.route("/api/createRestaurant").post(createRestaurant);
 router.route("/api").post(createAdmin).get(getAdmins);
 router.route("/api/:id").delete(deleteAdmin);
 
-module.exports = router;
+module.exports = router;

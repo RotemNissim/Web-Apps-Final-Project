@@ -7,6 +7,10 @@ const session = require('express-session');
 
 const { router: dishRouter } = require('./routes/dishes');
 const  logoutRoute = require('./routes/logout');
+const cartRoute = require('./routes/shoppingCart');
+const checkoutRoute = require('./routes/checkout');
+
+const ordersRouter = require('./routes/orderDishes')
 const userRoute = require('./routes/users');
 const signUpRoute = require('./routes/signUp');
 const env = process.env.NODE_ENV || "local";
@@ -52,13 +56,13 @@ app.use(express.json());
  app.use('/shoppingCart',require('./routes/shoppingCart'));
  app.use('/users' ,userRoute);
  app.use('/checkout', require('./routes/checkout'));
-
-
+ app.use('/shoppingCart',require('./routes/shoppingCart'));
+ app.use('/Orders',ordersRouter);
+ 
  const http = require('http').Server(app);
 
  const port = process.env.PORT || 8080;
  
  http.listen(port, () => {
-   console.log(`Server is running on port ${port}`);
- });
- 
+   console.log(`Server is running on port ${port}`);
+ });
