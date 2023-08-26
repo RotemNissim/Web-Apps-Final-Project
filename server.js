@@ -55,6 +55,7 @@ app.use(express.json());
  app.use('/restaurants',require('./routes/restaurants'));
  app.use('/shoppingCart',require('./routes/shoppingCart'));
  app.use('/users' ,userRoute);
+ app.use('/checkout', require('./routes/checkout'));
  app.use('/shoppingCart',require('./routes/shoppingCart'));
  app.use('/Orders',ordersRouter);
  
