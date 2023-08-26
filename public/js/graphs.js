@@ -9,9 +9,9 @@ $.ajax({
     // Process and use the data here
 
     // Convert the aggregated data into an array of objects
-    const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrice]) => ({
+    const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrices]) => ({
       date,
-      totalPrice,
+      totalPrices,
     }));
 
     // Create D3.js graph using the extracted income data

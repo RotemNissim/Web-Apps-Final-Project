@@ -27,7 +27,7 @@ const updateOrder = async (id, orderDetails) => {
     if (!order) {
         return null;
     }
-    Object.assign(order, orderDetails); // Copy properties from orderDetails to order
+    Order.assign(order, orderDetails); // Copy properties from orderDetails to order
     return await order.save();
 };
 
@@ -39,11 +39,12 @@ const getAllOrders = async (options = {}) => {
 const getOrdersByDate = async () => {
     console.log("Fetching orders by date...");
     try {
-        const ordersByDates = await Order.aggregate([
+        const ordersByDates = await 
+        Order.aggregate([
             {
                 $group: {
                     _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
-                    totalRevenue: { $sum: '$dishes.price' }, // Sum of prices in the dishes array
+                    totalPrice: { $sum: '$dishes.price' }, // Sum of prices in the dishes array
                 },
             },
         ]);
