@@ -4,7 +4,7 @@ const dishesService = require("../services/dishes");
 const index = async (req, res) => {
   const dishes = await dishesService.getDishes();
   console.log(dishes)
-  //const dishes = [{name: 'test', price: 3}]
+  //const dishes = [{name: 'test', Price: 3}]
   res.render("../views/dishes", { dishes });
 };
 
@@ -19,17 +19,17 @@ const createDish = async (req, res) => {
   }
  
 //   const _name = /^[A-Z a-z]{2,30}$/;
-//   const _price = /^[0-9]{1,10}$/;
+//   const _Price = /^[0-9]{1,10}$/;
 //   const _description = /^[A-Z a-z]{2,200}$/;
 //   const _allergenics = /^[A-Z a-z]{2,200}$/;
 //   const _restaurant = /^[A-Z a-z 0-9]{2,50}$/;
-//   if (!name ||!price ||!description ||!allergenics ||!restaurant) {
+//   if (!name ||!Price ||!description ||!allergenics ||!restaurant) {
 //     const err = new Error('All fields are required');
 //     alert (err);
-//   } else {if (_name.test(name) && _price.test(price) && _description.test(description00) && _allergenics.test(allergenics) && _restaurant.test(restaurant)){
+//   } else {if (_name.test(name) && _Price.test(Price) && _description.test(description00) && _allergenics.test(allergenics) && _restaurant.test(restaurant)){
 //     const newDish = new Dish(); //  create new instance of dish model
 //       newDish.name = name;
-//       newDish.price = price;
+//       newDish.Price = Price;
 //       newDish.description = description;
 //       newDish.allergenics = allergenics;
 //       newDish.restaurant = restaurant;
@@ -40,7 +40,7 @@ const createDish = async (req, res) => {
 //   alert (err);
 // }
 
-// if(!_price.test(price)) {
+// if(!_Price.test(Price)) {
 //   const err = new Error('Price must be between 1 and 10 digits');
 //   alert (err);
 // }

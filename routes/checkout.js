@@ -6,11 +6,11 @@ const Order = require('../models/Orders'); // Import the orders model
 router.post('/', async (req, res) => {
   const cartData = req.body.cart;
   
-  // Calculate the total price based on cart data
+  // Calculate the total Price based on cart data
   const totalPrice = calculateTotalPrice(cartData);
 
   try {
-    // Create a new order with the calculated total price
+    // Create a new order with the calculated total Price
     const order = new Order({ totalPrice });
     await order.save();
     res.status(201).json({ message: 'Order placed successfully!' });
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
 function calculateTotalPrice(cartData) {
   let total = 0;
   for (const item of cartData) {
-    total += item.price;
+    total += item.Price;
   }
   return total;
 }

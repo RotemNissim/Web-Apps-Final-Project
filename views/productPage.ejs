@@ -17,23 +17,23 @@
     <section class="product-details">
       <h1><%= product.name %></h1>
       <img src="<%= product.imgUrl %>" alt="<%= product.name %>">
-      <p><%= product.description %></p>
-      <p>Price: <%= product.price %> ₪</p>
-      <p>Category: <%= product.category %></p>
+      <p>Description: <%= product.description %></p>
+      <p>Price: ₪<%= product.Price %></p>
       <!-- Add more product information as needed -->      
     </section>
   </main>
 
   
   <!-- Add the Google Maps iframe section here -->
+  <h2>Location</h2>
   <section class="google-map">
-    <h2>Location</h2>
   
     <iframe
-    width="60%"
+    width="65%"
     height="300"
     frameborder="0"
     style="border: 0"
+    
     
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBGeMncrsBMb9ZS38FeHFW3e_j6ohy05o4&q=<%= encodeURIComponent(product.restaurant.address) %>">
   </iframe>

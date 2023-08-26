@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addToCartButton.addEventListener('click', () => {
     const productName = addToCartButton.getAttribute('data-name');
-    const productPrice = addToCartButton.getAttribute('data-price');
+    const productPrice = addToCartButton.getAttribute('data-Price');
 
     // Add the product to the cart
     cart.push({
       name: productName,
-      price: productPrice,
+      Price: productPrice,
     });
 console.log(cart);
     localStorage.setItem('cart', JSON.stringify(cart));

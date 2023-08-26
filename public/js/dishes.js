@@ -3,10 +3,10 @@ $(document).ready(() => {
   // Your jQuery code here
   
   $('#search-button').on('click', async () => {
-      const price = $('#max-price')[0].value;
+      const Price = $('#max-Price')[0].value;
 
       try {
-          const response = await $.get(`/dishes/api?maxPrice=${price}`);
+          const response = await $.get(`/dishes/api?maxPrice=${Price}`);
           let dishes = '';
           for (let i = 0; i < response.length; i++) {
               dishes += `<div class="dish">
@@ -32,7 +32,7 @@ $(document).ready(() => {
 
 function createDish() {
   const name = $('#name').val();
-  const price = $('#Price').val();
+  const Price = $('#Price').val();
   const chef = $('#chef').val();
   const tags = $('#tags').val();
   const type = $('#type').val();
@@ -43,7 +43,7 @@ function createDish() {
 
   const newDish = {
     name: name,
-    Price: price,
+    Price: Price,
     chef: chef,
     tags: tags,
     type: type,
@@ -70,6 +70,3 @@ function createDish() {
     }
   });
 }
-
-
-

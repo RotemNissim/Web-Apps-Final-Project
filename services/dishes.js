@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Dish = require("../models/Dishes");
 
-const createDish = async (restaurant, name, price, description, allergenics, chef, tags, type) => {
+const createDish = async (restaurant, name, Price, description, allergenics, chef, tags, type) => {
   const dish = new Dish({
     restaurant: restaurant,
     name: name,
-    price: price,
+    Price: Price,
     description: description,
     allergenics: allergenics,
     chef: chef,
@@ -31,13 +31,13 @@ return await Dish.find({}).populate("restaurant");
   
 };
 
-const updateDish = async (id, name, price, description, allergenics, chef, tags, type) => {
+const updateDish = async (id, name, Price, description, allergenics, chef, tags, type) => {
   const dish = await getDishById(id);
   if (!dish) {
     return null;
   }
   dish.name = name;
-  dish.price = price;
+  dish.Price = Price;
   dish.description = description;
   dish.allergenics = allergenics;
   dish.chef = chef;
