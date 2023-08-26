@@ -2,8 +2,15 @@
 
 const Order = require('../models/Orders');
 
-const createOrder = (orderDetails) => {
-    const order = new Order(orderDetails);
+const createOrder = (user,dishes,date,totalPrice,email,TA,delivery) => {
+    const dishPricesSum = dishes.reduce((sum, dish) => sum + dish.price, 0);
+    const order = new Order(user,dishes,date,totalPrice,TA,delivery);
+    order.user=user;
+    order.dishes=dishes;
+    order.date=date;
+    order.totalPrice=dishPricesSum;
+    order.TA=TA;
+    order.delivery=delivery
     return order.save();
 };
 
@@ -27,7 +34,7 @@ const updateOrder = async (id, orderDetails) => {
     if (!order) {
         return null;
     }
-    Object.assign(order, orderDetails); // Copy properties from orderDetails to order
+    Order.assign(order, orderDetails); // Copy properties from orderDetails to order
     return await order.save();
 };
 
@@ -37,16 +44,26 @@ const getAllOrders = async (options = {}) => {
 };
 
 const getOrdersByDate = async () => {
-    const ordersByDates = await Order.aggregate([
-        {
-            $group: {
-                _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
-                totalRevenue: { $sum: '$totalPrice' },
+    console.log("Fetching orders by date...");
+    try {
+        const ordersByDates = await 
+        Order.aggregate([
+            {
+                $group: {
+                    _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
+                    totalPrice: { $sum: '$totalPrice' }, // Sum of prices in the dishes array
+                },
             },
-        },
-    ]);
-    return ordersByDates;
+        ]);
+        console.log("Aggregation result:", ordersByDates);
+        return ordersByDates;
+    } catch (error) {
+        console.error("Error fetching orders by date:", error);
+        throw error;
+    }
 };
+
+
 
 module.exports = {
     createOrder,

@@ -1,33 +1,35 @@
-// Fetch orders data from backend
-fetch('/Orders/api/OrdersByDate')
-   .then(response => response.json())
-   .then(ordersByDate => {
-     // Process and use the data here
 
-     // Convert the aggregated data into an array of objects
-     const incomesByDate = Object.entries(ordersByDate).map(([date, totalRevenue]) => ({
-       date,
-       totalRevenue,
-     }));
-
-     // Create D3.js graph using the extracted income data
-     createIncomeGraph(incomesByDate);
-   })
-   .catch(error => {
-     console.error('Error fetching orders data:', error);
-   });
+// Fetch orders data from backend using AJAX
+$.ajax({
+  url: 'Orders/api/ordersByDate',  // Use the correct API route
+  method: 'GET',
+  dataType: 'json',
+  success: function (ordersByDates) {
+    // Process and use the data here
+    const incomesByDate = ordersByDates.map(order => ({
+      date: order.date,
+      totalPrice: order.totalPrice,
+    }));
+    createIncomeGraph(incomesByDate);
+  },
+  error: function (error) {
+    console.error('Error fetching orders data:', error);
+  }
+});
 
 // Rest of the code remains the same...
 
 // Create income graph using D3.js
 function createIncomeGraph(incomesByDate) {
+  console.log(incomesByDate); // Check the received data in the console
+
   // Your D3.js graph creation code goes here
   // ...
 
   // This is just a basic example, you need to customize it for your needs
   const graphContainer = document.querySelector('.income-graph');
-  const width = 800;
-  const height = 400;
+  const width = 500;
+  const height = 500;
   
 
 // Create an SVG element within the container
@@ -66,3 +68,7 @@ svg.append('g')
 svg.append('g')
   .call(d3.axisLeft(yScale));
 }
+
+
+
+
