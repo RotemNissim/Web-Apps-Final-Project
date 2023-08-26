@@ -14,17 +14,17 @@
 
   <footer></footer>
 
-  <script src="/public/common.js"></script>
   <script>
     const successMessage = document.getElementById('successMessage');
     const urlParams = new URLSearchParams(window.location.search);
     const actionType = urlParams.get('action');
-
+    
     if (actionType === 'delivery') {
       successMessage.textContent = 'Your delivery order has been received. Thank you!';
     } else if (actionType === 'reservation') {
       successMessage.textContent = 'Your reservation has been booked. Thank you!';
     }
-  </script>
+    </script>
 </body>
 </html>
+<script src="/js/common.js"></script>
