@@ -27,13 +27,6 @@
     min-height: 100vh;
   }
   
-  /* Style the header */
-  header {
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
   /* Style the footer */
   footer {
     color: white;
@@ -90,6 +83,7 @@
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.2s;
+    margin-top: 5px;
   }
   
   button:hover {
