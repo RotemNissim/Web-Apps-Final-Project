@@ -33,7 +33,7 @@ body {
 .carousel {
   position: relative;
   overflow: visible;
-  max-width: 80%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +128,7 @@ body {
 }
 
 /* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+@media (width: 768px) {
   .carousel {
     height: auto; /* Adjust as needed */
   }

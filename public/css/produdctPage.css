@@ -25,7 +25,7 @@ main {
 
 /* Style the product details section */
 .product-details {
-    max-width: 70%;
+    width: 70%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -35,7 +35,7 @@ main {
 
 /* Style the product image */
 .product-details img {
-    max-width: 50%;
+    width: 50%;
     height: auto;
     border-radius: 20px;
     margin-bottom: 10px;
