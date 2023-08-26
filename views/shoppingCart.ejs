@@ -9,16 +9,10 @@
     <title>Shopping Cart</title>
 </head>
 <body>
-    <a href="/dishes.ejs"><button type="button" class="btn-back">Back to dishes</button></a>
+    <a href="/dishes"><button type="button" class="btn-back">Back to dishes</button></a>
     <h1>Shopping Cart</h1>
     <div id="cart-container">
-        <% cart.forEach(product => { %>
-            <div class="product">
-                <p><%= product.name %></p>
-                <p><%= product.Price %></p>
-                <button class="btn-remove" data-product-id="<%= product._id %>">Remove from Cart</button>
-            </div>
-        <% }); %>
+        
     </div>
     <a href="/checkout"><button type="button" class="btn-checkout">Proceed to Checkout</button></a>
     <script src="/js/shoppingCart.js"></script>
