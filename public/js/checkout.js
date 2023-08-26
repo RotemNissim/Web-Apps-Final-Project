@@ -20,7 +20,7 @@ function createOrder() {
     delivery: delivery
   };
 
-console.log(newOrder);
+(newOrder);
 
 $.ajax({
   type: 'POST',
@@ -29,7 +29,7 @@ data: JSON.stringify(newOrder),
 contentType: 'application/json',
 dataType: 'json',
 success: function(data) {
-  console.log('order created', newOrder);
+  ('order created', newOrder);
 },
 error:function(error) {
   console.error('order error', error);

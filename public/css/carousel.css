@@ -78,8 +78,8 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 25%; /* Make the arrows round */
-  margin-left: 11vw;
-  margin-right: 12vw;
+  margin-left: 10vw;
+  margin-right: 11.5vw;
 }
 
 .carousel-prev {

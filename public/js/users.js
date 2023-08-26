@@ -17,7 +17,7 @@ function createUser() {
     };
   
 
-    console.log("Sending data:", newUser);
+    ("Sending data:", newUser);
     $.ajax({
       type: 'POST',
       url: '/users/signup', // Route to handle the user creation on the server side
@@ -26,7 +26,7 @@ function createUser() {
       dataType: 'json', //
       success: function(data) {
         // Handle the response here (e.g., show success message)
-        console.log('User created successfully', data);
+        ('User created successfully', data);
         window.location.href = '/users/' + data.id;
       },
       error: function(error) {
