@@ -1,20 +1,15 @@
 
-
 // Fetch orders data from backend using AJAX
 $.ajax({
-  url: '/Orders/api/OrdersByDate',
+  url: 'Orders/api/ordersByDate',  // Use the correct API route
   method: 'GET',
   dataType: 'json',
-  success: function (OrdersByDates) {
+  success: function (ordersByDates) {
     // Process and use the data here
-
-    // Convert the aggregated data into an array of objects
-    const incomesByDate = Object.entries(OrdersByDates).map(([date, totalPrices]) => ({
-      date,
-      totalPrices,
+    const incomesByDate = ordersByDates.map(order => ({
+      date: order.date,
+      totalPrice: order.totalPrice,
     }));
-
-    // Create D3.js graph using the extracted income data
     createIncomeGraph(incomesByDate);
   },
   error: function (error) {

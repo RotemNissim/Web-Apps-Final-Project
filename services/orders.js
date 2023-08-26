@@ -2,8 +2,15 @@
 
 const Order = require('../models/Orders');
 
-const createOrder = (orderDetails) => {
-    const order = new Order(orderDetails);
+const createOrder = (user,dishes,date,totalPrice,email,TA,delivery) => {
+    const dishPricesSum = dishes.reduce((sum, dish) => sum + dish.price, 0);
+    const order = new Order(user,dishes,date,totalPrice,TA,delivery);
+    order.user=user;
+    order.dishes=dishes;
+    order.date=date;
+    order.totalPrice=dishPricesSum;
+    order.TA=TA;
+    order.delivery=delivery
     return order.save();
 };
 
@@ -44,7 +51,7 @@ const getOrdersByDate = async () => {
             {
                 $group: {
                     _id: { $dateToString: { format: '%Y-%m-%d', date: '$date' } },
-                    totalPrice: { $sum: '$dishes.price' }, // Sum of prices in the dishes array
+                    totalPrice: { $sum: '$totalPrice' }, // Sum of prices in the dishes array
                 },
             },
         ]);
