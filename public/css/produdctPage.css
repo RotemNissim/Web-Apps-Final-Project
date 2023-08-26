@@ -35,7 +35,7 @@ main {
 
 /* Style the product image */
 .product-details img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     border-radius: 20px;
     margin-bottom: 10px;
