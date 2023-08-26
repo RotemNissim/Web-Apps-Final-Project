@@ -23,3 +23,19 @@ function createAdmin() {
     }
   });
 }
+function deleteDish(id) {
+  $.ajax({
+      url: '/admin/api/deleteDish',
+      method: "DELETE",
+      data: { id },
+      followRedirects: true,
+      xhrFields: { withCredentials: true },
+      success: function (data, textStatus, jqXHR) {
+        alert("Dish Removed!");
+        location.reload();
+      },
+      error: function () {
+        alert("Uable to delete this dish!");
+      },
+  });
+}

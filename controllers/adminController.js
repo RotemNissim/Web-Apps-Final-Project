@@ -11,9 +11,10 @@ const createDishForm =  async (req, res) => {
     };
 
 
-const manageDishesForm = (req, res) => {
-    res.render('../views/forms-admin/manageDishes.ejs');
-    };
+const manageDishesForm = async (req, res) => {
+    const dishes = await dishesService.getDishes();
+    res.render('../views/forms-admin/manageDishes.ejs', { dishes });
+};
 
 const createRestaurantForm = async (req, res) => {
     const allDishes = await dishesService.getDishes();
@@ -88,5 +89,5 @@ module.exports = {
     getAdmins,
     updateAdmin,
     deleteAdmin,
-    createAdmin
+    createAdmin,
 };
