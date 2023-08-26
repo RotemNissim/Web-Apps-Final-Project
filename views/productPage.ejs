@@ -29,6 +29,20 @@
 
 
   
+  <div class="reviews">
+    <h2>Reviews</h2>
+    
+    <!-- Display reviews -->
+    <% for (let i = 0; i < revs.length; i++) { %>
+      <div class="review">
+              <p>Review: <%= revs[i].text %></p>
+        <p>Rate: <%= revs[i].rate %></p>
+      </div>
+    <% } %>
+  </div>
+  
+
+  
   <!-- Add the Google Maps iframe section here -->
   <h2>Location</h2>
   <section class="google-map">
