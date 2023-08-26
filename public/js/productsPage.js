@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: productName,
         price: productPrice,
       });
-  console.log(cart);
+  (cart);
       localStorage.setItem('cart', JSON.stringify(cart));
       window.location.href = `/shoppingCart` //?cart=${encodeURIComponent(JSON.stringify(cart))}`;
       // You might also want to display a message to the user

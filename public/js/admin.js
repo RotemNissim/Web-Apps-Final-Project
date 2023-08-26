@@ -7,7 +7,7 @@ function createAdmin() {
     password: password
   };
 
-  console.log(newAdmin);
+  (newAdmin);
 
   $.ajax({
     type: 'POST',
@@ -16,7 +16,7 @@ function createAdmin() {
     contentType: 'application/json',
     dataType: 'json',
     success: function (data) {
-      console.log('admin created successfully', newAdmin);
+      ('admin created successfully', newAdmin);
     },
     error: function(error) {
       console.error('error creating admin', error);

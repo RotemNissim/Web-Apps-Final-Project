@@ -102,7 +102,7 @@ function createDish() {
     restaurant: restaurant
   };
 
-  console.log("Sending data:", newDish);
+  ("Sending data:", newDish);
   $.ajax({
     type: 'POST',
     url: '/admin/api/createDish', // Route to handle the dish creation on the server side
@@ -111,7 +111,7 @@ function createDish() {
     dataType: 'json', //
     success: function(data) {
       // Handle the response here (e.g., show success message)
-      console.log('Dish created successfully', data);
+      ('Dish created successfully', data);
     },
     error: function(error) {
       // Handle the error here (e.g., show error message)

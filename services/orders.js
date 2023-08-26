@@ -44,7 +44,7 @@ const getAllOrders = async (options = {}) => {
 };
 
 const getOrdersByDate = async () => {
-    console.log("Fetching orders by date...");
+    ("Fetching orders by date...");
     try {
         const ordersByDates = await 
         Order.aggregate([
@@ -55,7 +55,7 @@ const getOrdersByDate = async () => {
                 },
             },
         ]);
-        console.log("Aggregation result:", ordersByDates);
+        ("Aggregation result:", ordersByDates);
         return ordersByDates;
     } catch (error) {
         console.error("Error fetching orders by date:", error);
