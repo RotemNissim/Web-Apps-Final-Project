@@ -43,7 +43,7 @@
 const restService = require('../services/restaurant');
 
 const getRestaurants = async (req, res) => {
-  const restaurants = await restService.getRestaurants();
+  const restaurants = await restService.getAllRestaurants();
   res.json(restaurants);
 };
 
